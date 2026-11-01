@@ -1,0 +1,11 @@
+{
+  "saved_workbook_values_checked": 915988,
+  "original_source_values_checked": 262080,
+  "matrix_rows_checked": 49920,
+  "source_rows_per_hand": {
+    "Left": 240,
+    "Right": 240
+  },
+  "timestamp_text_preserved": true,
+  "tolerance": "1e-14 absolute/relative for numeric Excel roundtrip"
+}

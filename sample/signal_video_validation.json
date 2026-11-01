@@ -1,0 +1,19 @@
+{
+  "frames": 196,
+  "duration_s": 8.012939999999958,
+  "output_pts_max_difference_s": 1.000000000139778e-06,
+  "maximum_nearest_sensor_offset_s": 0.041869899999994686,
+  "source_clip_sha256": "e6c302980dd7d9117e8fb3a36f673909c3d1fe058a50bc4a4d5679897227aae4",
+  "source_signal_sha256": "e2ed67f6895f4f6b301bb636f884b9d17d33117feba0fc49c64aed07d1d02ad4",
+  "visualization_sha256": "3f7b6abbb76ea864fb0bf54162d761b187444d81a95dc23b77ba3d01e8f56c21",
+  "signals": [
+    "Left wrist delta X/Y/Z (cm)",
+    "Right wrist delta X/Y/Z (cm)",
+    "Left and right thumb-tip to index-tip distance (cm)"
+  ],
+  "baseline_times_s": {
+    "Left": 0.041869899999994686,
+    "Right": 0.2689067000000023
+  },
+  "missing_data": "NaN gaps; no interpolation; invalid samples have no markers"
+}

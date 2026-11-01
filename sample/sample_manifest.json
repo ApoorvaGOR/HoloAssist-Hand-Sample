@@ -1,0 +1,75 @@
+{
+  "data_license": "CDLA-Permissive-2.0",
+  "source": "https://holoassist.github.io/",
+  "recording": "R0027-12-GoPro",
+  "files": {
+    "sample/download_manifest.json": {
+      "bytes": 1165,
+      "sha256": "f5a6953e8d9d6cf2e1544e889d0ac094d104a8421edb6041f34e444327919317"
+    },
+    "sample/excel_validation.json": {
+      "bytes": 294,
+      "sha256": "40f7614dcd5dd802b4ce4a74968271f8a9db86b23c4ab19afbfa0467dda0a2c0"
+    },
+    "sample/hand_data.json": {
+      "bytes": 4243526,
+      "sha256": "e2ed67f6895f4f6b301bb636f884b9d17d33117feba0fc49c64aed07d1d02ad4"
+    },
+    "sample/hand_movement.mp4": {
+      "bytes": 2291305,
+      "sha256": "e6c302980dd7d9117e8fb3a36f673909c3d1fe058a50bc4a4d5679897227aae4"
+    },
+    "sample/hand_signals_with_video.mp4": {
+      "bytes": 3181644,
+      "sha256": "3f7b6abbb76ea864fb0bf54162d761b187444d81a95dc23b77ba3d01e8f56c21"
+    },
+    "sample/hand_tracking.xlsx": {
+      "bytes": 5973736,
+      "sha256": "0227ec42ba0f624dca45e76a0751bef167fb9de857f8d409abbd14498ac992c7"
+    },
+    "sample/hand_tracking_diagnostic.mp4": {
+      "bytes": 3243286,
+      "sha256": "6f81851c10225a54bc7176d49410befb79c5f505263db8f00c4616af2c2bdfe9"
+    },
+    "sample/left_wrist_positions.png": {
+      "bytes": 51506,
+      "sha256": "ceafb0786d0eab594276b003f9dcadf68960c27a66ca0dd7e969deb708eb00d9"
+    },
+    "sample/raw/Hands/Left_sync.txt": {
+      "bytes": 1553514,
+      "sha256": "2d350daeade598a1b3ac2ace016c177541a55a7394e660561b9beb089bf4cb73"
+    },
+    "sample/raw/Hands/Right_sync.txt": {
+      "bytes": 1546783,
+      "sha256": "33bda261142d9b2092b5e6bc39fc836edeb0fbc21dfc47c568eb4df8248aba52"
+    },
+    "sample/raw/Video/Pose_sync.txt": {
+      "bytes": 70003,
+      "sha256": "71a0783ebeaa7979a762e1e81b34a84c9697235c4d3dffcc432d37368fe43b44"
+    },
+    "sample/raw/Video/VideoMp4Timing.txt": {
+      "bytes": 38,
+      "sha256": "f5131aa46ff193d3877e0488b95471f5ea89f3fe98a6e4ab8b9686df88e077d8"
+    },
+    "sample/raw_excerpt_manifest.json": {
+      "bytes": 1173,
+      "sha256": "cc36dd65d72f8b12539faa92cf1a2a4e7e3720d8c0aa79b5951034400c31735b"
+    },
+    "sample/right_wrist_positions.png": {
+      "bytes": 65880,
+      "sha256": "2d9ea470c61a5f2e058529ac818910c36dfa62289d9a1c4c3397767c2ba3fb62"
+    },
+    "sample/signal_video_validation.json": {
+      "bytes": 774,
+      "sha256": "2dbeb40f9c7885d8a6d9a202267d334deb5b7560d71528a50c4499c604b55281"
+    },
+    "sample/tracking_diagnostic.json": {
+      "bytes": 1050,
+      "sha256": "c1bec34af9063bcd4425d5d86f17875b9f8b9a952121bb7ddeddcae27d42a8f6"
+    },
+    "sample/validation.json": {
+      "bytes": 2354,
+      "sha256": "49446fba36cb73d9dba3f37f0bf506da7748c0a07f70047c9d6f692cdd14def8"
+    }
+  }
+}

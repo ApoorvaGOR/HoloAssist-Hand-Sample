@@ -1,0 +1,29 @@
+{
+  "session": "R0027-12-GoPro",
+  "source": "https://holoassist.github.io/",
+  "license": "CDLA-Permissive-2.0",
+  "files": {
+    "raw/Hands/Left_sync.txt": {
+      "rows": 240,
+      "sha256": "2d350daeade598a1b3ac2ace016c177541a55a7394e660561b9beb089bf4cb73",
+      "source_member": "R0027-12-GoPro/Export_py/Hands/Left_sync.txt",
+      "transformation": "None; exact original lines"
+    },
+    "raw/Hands/Right_sync.txt": {
+      "rows": 240,
+      "sha256": "33bda261142d9b2092b5e6bc39fc836edeb0fbc21dfc47c568eb4df8248aba52",
+      "source_member": "R0027-12-GoPro/Export_py/Hands/Right_sync.txt",
+      "transformation": "None; exact original lines"
+    },
+    "raw/Video/Pose_sync.txt": {
+      "rows": 255,
+      "sha256": "71a0783ebeaa7979a762e1e81b34a84c9697235c4d3dffcc432d37368fe43b44",
+      "source_member": "R0027-12-GoPro/Export_py/Video/Pose_sync.txt",
+      "transformation": "Exact original lines, clip interval plus 0.25-second margins"
+    },
+    "raw/Video/VideoMp4Timing.txt": {
+      "sha256": "f5131aa46ff193d3877e0488b95471f5ea89f3fe98a6e4ab8b9686df88e077d8",
+      "transformation": "Unmodified original recording start/end UTC ticks"
+    }
+  }
+}

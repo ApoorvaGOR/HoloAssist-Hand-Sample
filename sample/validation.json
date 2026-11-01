@@ -1,0 +1,52 @@
+{
+  "session": "R0027-12-GoPro",
+  "video_start_ticks_text": "637932482246358268",
+  "clip_start_video_s": 369.004068,
+  "clip_end_video_s": 377.017008,
+  "clip_duration_s": 8.012939999999958,
+  "source_first_frame": 9026,
+  "source_end_frame_exclusive": 9222,
+  "clip_frames": 196,
+  "movement": {
+    "Left": {
+      "tracked_fraction": 0.9958333333333333,
+      "path_m": 0.5847526378783521,
+      "extent_m": 0.3209879960461016,
+      "transitions": 460
+    },
+    "Right": {
+      "tracked_fraction": 0.9375,
+      "path_m": 0.9246718164952467,
+      "extent_m": 0.9106824016552654,
+      "transitions": 428
+    }
+  },
+  "matrix_checks": {
+    "Left": {
+      "bottom_row_max_error": 0.0,
+      "rotation_orthogonality_max_error": 2.899928701616261e-06,
+      "rotation_determinant_max_error": 3.0246983273585215e-06
+    },
+    "Right": {
+      "bottom_row_max_error": 0.0,
+      "rotation_orthogonality_max_error": 2.8770847180226156e-06,
+      "rotation_determinant_max_error": 2.9397800804797924e-06
+    }
+  },
+  "row_counts": {
+    "Left": 240,
+    "Right": 240
+  },
+  "source_sha256": {
+    "data/R0027-12-GoPro/Export_py/Hands/Left_sync.txt": "45b5aa6c3d4d39451451d00186252f16583ea3a7d7edf128a6968cd4c6d31f48",
+    "data/R0027-12-GoPro/Export_py/Hands/Right_sync.txt": "ec5abe5412eb903754c5ec577867654f314b878a8bef6b74894ea89ad843614a",
+    "data/R0027-12-GoPro/Export_py/Video/VideoMp4Timing.txt": "f5131aa46ff193d3877e0488b95471f5ea89f3fe98a6e4ab8b9686df88e077d8",
+    "data/R0027-12-GoPro/Export_py/Video_pitchshift.mp4": "d79e172c28ded7a52a7eef554e33b3003552ba7caa4d5b7b6a15dac627143567"
+  },
+  "clip_sha256": "e6c302980dd7d9117e8fb3a36f673909c3d1fe058a50bc4a4d5679897227aae4",
+  "coordinates": "Original PSI world coordinate system; translation in metres. Not image pixels.",
+  "source_format": "471 fields: synchronized grid time (seconds), integer sensor ticks, active, 26 row-major 4x4 matrices, 26 valid, 26 tracked",
+  "timestamp_note": "Ticks are text to avoid Excel's 15-significant-digit numeric limit; time_s calculated by integer subtraction first.",
+  "missing_note": "NaN/Inf exported as blank; raw finite invalid values retained with valid/tracked/active flags.",
+  "synchronization": "Sensor ticks minus VideoMp4Timing origin; nearest decoded MP4 PTS recorded with signed residual. No interpolation or latency correction."
+}

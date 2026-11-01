@@ -1,0 +1,32 @@
+[
+  {
+    "archive_url": "https://hl2data.z5.web.core.windows.net/holoassist-data-release/hands.tar",
+    "member": "R0027-12-GoPro/Export_py/Hands/Left_sync.txt",
+    "bytes": 79158054,
+    "archive_data_offset": 3072
+  },
+  {
+    "archive_url": "https://hl2data.z5.web.core.windows.net/holoassist-data-release/hands.tar",
+    "member": "R0027-12-GoPro/Export_py/Hands/Right_sync.txt",
+    "bytes": 78887316,
+    "archive_data_offset": 79162880
+  },
+  {
+    "archive_url": "https://hl2data.z5.web.core.windows.net/holoassist-data-release/video_pitch_shifted.tar",
+    "member": "R0027-12-GoPro/Export_py/Video/Pose_sync.txt",
+    "bytes": 3355904,
+    "archive_data_offset": 3072
+  },
+  {
+    "archive_url": "https://hl2data.z5.web.core.windows.net/holoassist-data-release/video_pitch_shifted.tar",
+    "member": "R0027-12-GoPro/Export_py/Video/VideoMp4Timing.txt",
+    "bytes": 38,
+    "archive_data_offset": 3360768
+  },
+  {
+    "archive_url": "https://hl2data.z5.web.core.windows.net/holoassist-data-release/video_pitch_shifted.tar",
+    "member": "R0027-12-GoPro/Export_py/Video_pitchshift.mp4",
+    "bytes": 114603761,
+    "archive_data_offset": 3362816
+  }
+]

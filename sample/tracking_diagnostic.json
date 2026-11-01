@@ -1,0 +1,26 @@
+{
+  "source_report": "R0027-12-GoPro",
+  "diagnostics": {
+    "Left": {
+      "behind_camera_tracked_wrist_samples": 0,
+      "behind_camera_times_s": [],
+      "camera_nearest_pose_max_difference_ms": 95.4745,
+      "original_same_grid_hand_camera_max_difference_ms": 104.5138
+    },
+    "Right": {
+      "behind_camera_tracked_wrist_samples": 2,
+      "behind_camera_times_s": [
+        7.41106769999999,
+        7.41106769999999
+      ],
+      "camera_nearest_pose_max_difference_ms": 95.4745,
+      "original_same_grid_hand_camera_max_difference_ms": 104.5138
+    }
+  },
+  "frame_count": 196,
+  "reencoding_pts_max_error_s": 1.000000000139778e-06,
+  "output_sha256": "6f81851c10225a54bc7176d49410befb79c5f505263db8f00c4616af2c2bdfe9",
+  "calibration": "Normalized X/Z,Y/Z only. Intrinsics unavailable; no calibrated overlay claimed.",
+  "source_reference": "https://github.com/taeinkwon/PyHoloAssist/blob/main/hand_eye_project.py",
+  "interpretation": "Export fidelity does not establish physical tracking accuracy. No chosen lag or smoothing."
+}

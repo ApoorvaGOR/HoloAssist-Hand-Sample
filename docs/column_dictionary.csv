@@ -1,0 +1,1109 @@
+sheet,excel_column,column_name,kind,unit,type,raw_field_index_0_based,description
+Left_hand,A,source_sync_time_s,time,s,number,0,"Original synchronized-grid time, preserved separately from sensor time."
+Left_hand,B,sensor_timestamp_ticks_text,time,100 ns UTC ticks,text,1,Exact original .NET timestamp since 0001-01-01; do not convert to an Excel numeric cell.
+Left_hand,C,video_time_s,time,s,number,derived,(integer sensor ticks - original MP4 start ticks) / 10000000.
+Left_hand,D,clip_time_s,time,s,number,derived,video_time_s - actual selected original-video start time; can repeat.
+Left_hand,E,nearest_video_frame,alignment,frame index,integer,derived,"Nearest decoded original MP4 frame, zero-based; not clip-frame number."
+Left_hand,F,nearest_video_time_s,alignment,s,number,derived,Presentation timestamp of nearest original MP4 frame.
+Left_hand,G,sensor_minus_video_ms,alignment,ms,number,derived,1000 * (video_time_s - nearest_video_time_s); signed timing residual.
+Left_hand,H,hand_active,quality,0 or 1,integer,2,Original hand active flag; combine with joint validity/tracking and finite-value checks.
+Left_hand,I,Palm_M00,matrix,dimensionless,number,3,"Palm pose matrix M00, row-major. Rotation component."
+Left_hand,J,Palm_M01,matrix,dimensionless,number,4,"Palm pose matrix M01, row-major. Rotation component."
+Left_hand,K,Palm_M02,matrix,dimensionless,number,5,"Palm pose matrix M02, row-major. Rotation component."
+Left_hand,L,Palm_M03,matrix,m,number,6,"Palm pose matrix M03, row-major. World translation component."
+Left_hand,M,Palm_M10,matrix,dimensionless,number,7,"Palm pose matrix M10, row-major. Rotation component."
+Left_hand,N,Palm_M11,matrix,dimensionless,number,8,"Palm pose matrix M11, row-major. Rotation component."
+Left_hand,O,Palm_M12,matrix,dimensionless,number,9,"Palm pose matrix M12, row-major. Rotation component."
+Left_hand,P,Palm_M13,matrix,m,number,10,"Palm pose matrix M13, row-major. World translation component."
+Left_hand,Q,Palm_M20,matrix,dimensionless,number,11,"Palm pose matrix M20, row-major. Rotation component."
+Left_hand,R,Palm_M21,matrix,dimensionless,number,12,"Palm pose matrix M21, row-major. Rotation component."
+Left_hand,S,Palm_M22,matrix,dimensionless,number,13,"Palm pose matrix M22, row-major. Rotation component."
+Left_hand,T,Palm_M23,matrix,m,number,14,"Palm pose matrix M23, row-major. World translation component."
+Left_hand,U,Palm_M30,matrix,dimensionless,number,15,"Palm pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,V,Palm_M31,matrix,dimensionless,number,16,"Palm pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,W,Palm_M32,matrix,dimensionless,number,17,"Palm pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,X,Palm_M33,matrix,dimensionless,number,18,"Palm pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,Y,Palm_x_m,position,m,number,6,Palm world x position; duplicates the same joint's M03 value.
+Left_hand,Z,Palm_y_m,position,m,number,10,Palm world y position; duplicates the same joint's M13 value.
+Left_hand,AA,Palm_z_m,position,m,number,14,Palm world z position; duplicates the same joint's M23 value.
+Left_hand,AB,Palm_valid,quality,0 or 1,integer,419,Original Palm valid flag. A 1 does not certify physical accuracy.
+Left_hand,AC,Palm_tracked,quality,0 or 1,integer,445,Original Palm tracked flag. A 1 does not certify physical accuracy.
+Left_hand,AD,Wrist_M00,matrix,dimensionless,number,19,"Wrist pose matrix M00, row-major. Rotation component."
+Left_hand,AE,Wrist_M01,matrix,dimensionless,number,20,"Wrist pose matrix M01, row-major. Rotation component."
+Left_hand,AF,Wrist_M02,matrix,dimensionless,number,21,"Wrist pose matrix M02, row-major. Rotation component."
+Left_hand,AG,Wrist_M03,matrix,m,number,22,"Wrist pose matrix M03, row-major. World translation component."
+Left_hand,AH,Wrist_M10,matrix,dimensionless,number,23,"Wrist pose matrix M10, row-major. Rotation component."
+Left_hand,AI,Wrist_M11,matrix,dimensionless,number,24,"Wrist pose matrix M11, row-major. Rotation component."
+Left_hand,AJ,Wrist_M12,matrix,dimensionless,number,25,"Wrist pose matrix M12, row-major. Rotation component."
+Left_hand,AK,Wrist_M13,matrix,m,number,26,"Wrist pose matrix M13, row-major. World translation component."
+Left_hand,AL,Wrist_M20,matrix,dimensionless,number,27,"Wrist pose matrix M20, row-major. Rotation component."
+Left_hand,AM,Wrist_M21,matrix,dimensionless,number,28,"Wrist pose matrix M21, row-major. Rotation component."
+Left_hand,AN,Wrist_M22,matrix,dimensionless,number,29,"Wrist pose matrix M22, row-major. Rotation component."
+Left_hand,AO,Wrist_M23,matrix,m,number,30,"Wrist pose matrix M23, row-major. World translation component."
+Left_hand,AP,Wrist_M30,matrix,dimensionless,number,31,"Wrist pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,AQ,Wrist_M31,matrix,dimensionless,number,32,"Wrist pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,AR,Wrist_M32,matrix,dimensionless,number,33,"Wrist pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,AS,Wrist_M33,matrix,dimensionless,number,34,"Wrist pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,AT,Wrist_x_m,position,m,number,22,Wrist world x position; duplicates the same joint's M03 value.
+Left_hand,AU,Wrist_y_m,position,m,number,26,Wrist world y position; duplicates the same joint's M13 value.
+Left_hand,AV,Wrist_z_m,position,m,number,30,Wrist world z position; duplicates the same joint's M23 value.
+Left_hand,AW,Wrist_valid,quality,0 or 1,integer,420,Original Wrist valid flag. A 1 does not certify physical accuracy.
+Left_hand,AX,Wrist_tracked,quality,0 or 1,integer,446,Original Wrist tracked flag. A 1 does not certify physical accuracy.
+Left_hand,AY,ThumbMetacarpal_M00,matrix,dimensionless,number,35,"ThumbMetacarpal pose matrix M00, row-major. Rotation component."
+Left_hand,AZ,ThumbMetacarpal_M01,matrix,dimensionless,number,36,"ThumbMetacarpal pose matrix M01, row-major. Rotation component."
+Left_hand,BA,ThumbMetacarpal_M02,matrix,dimensionless,number,37,"ThumbMetacarpal pose matrix M02, row-major. Rotation component."
+Left_hand,BB,ThumbMetacarpal_M03,matrix,m,number,38,"ThumbMetacarpal pose matrix M03, row-major. World translation component."
+Left_hand,BC,ThumbMetacarpal_M10,matrix,dimensionless,number,39,"ThumbMetacarpal pose matrix M10, row-major. Rotation component."
+Left_hand,BD,ThumbMetacarpal_M11,matrix,dimensionless,number,40,"ThumbMetacarpal pose matrix M11, row-major. Rotation component."
+Left_hand,BE,ThumbMetacarpal_M12,matrix,dimensionless,number,41,"ThumbMetacarpal pose matrix M12, row-major. Rotation component."
+Left_hand,BF,ThumbMetacarpal_M13,matrix,m,number,42,"ThumbMetacarpal pose matrix M13, row-major. World translation component."
+Left_hand,BG,ThumbMetacarpal_M20,matrix,dimensionless,number,43,"ThumbMetacarpal pose matrix M20, row-major. Rotation component."
+Left_hand,BH,ThumbMetacarpal_M21,matrix,dimensionless,number,44,"ThumbMetacarpal pose matrix M21, row-major. Rotation component."
+Left_hand,BI,ThumbMetacarpal_M22,matrix,dimensionless,number,45,"ThumbMetacarpal pose matrix M22, row-major. Rotation component."
+Left_hand,BJ,ThumbMetacarpal_M23,matrix,m,number,46,"ThumbMetacarpal pose matrix M23, row-major. World translation component."
+Left_hand,BK,ThumbMetacarpal_M30,matrix,dimensionless,number,47,"ThumbMetacarpal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,BL,ThumbMetacarpal_M31,matrix,dimensionless,number,48,"ThumbMetacarpal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,BM,ThumbMetacarpal_M32,matrix,dimensionless,number,49,"ThumbMetacarpal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,BN,ThumbMetacarpal_M33,matrix,dimensionless,number,50,"ThumbMetacarpal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,BO,ThumbMetacarpal_x_m,position,m,number,38,ThumbMetacarpal world x position; duplicates the same joint's M03 value.
+Left_hand,BP,ThumbMetacarpal_y_m,position,m,number,42,ThumbMetacarpal world y position; duplicates the same joint's M13 value.
+Left_hand,BQ,ThumbMetacarpal_z_m,position,m,number,46,ThumbMetacarpal world z position; duplicates the same joint's M23 value.
+Left_hand,BR,ThumbMetacarpal_valid,quality,0 or 1,integer,421,Original ThumbMetacarpal valid flag. A 1 does not certify physical accuracy.
+Left_hand,BS,ThumbMetacarpal_tracked,quality,0 or 1,integer,447,Original ThumbMetacarpal tracked flag. A 1 does not certify physical accuracy.
+Left_hand,BT,ThumbProximal_M00,matrix,dimensionless,number,51,"ThumbProximal pose matrix M00, row-major. Rotation component."
+Left_hand,BU,ThumbProximal_M01,matrix,dimensionless,number,52,"ThumbProximal pose matrix M01, row-major. Rotation component."
+Left_hand,BV,ThumbProximal_M02,matrix,dimensionless,number,53,"ThumbProximal pose matrix M02, row-major. Rotation component."
+Left_hand,BW,ThumbProximal_M03,matrix,m,number,54,"ThumbProximal pose matrix M03, row-major. World translation component."
+Left_hand,BX,ThumbProximal_M10,matrix,dimensionless,number,55,"ThumbProximal pose matrix M10, row-major. Rotation component."
+Left_hand,BY,ThumbProximal_M11,matrix,dimensionless,number,56,"ThumbProximal pose matrix M11, row-major. Rotation component."
+Left_hand,BZ,ThumbProximal_M12,matrix,dimensionless,number,57,"ThumbProximal pose matrix M12, row-major. Rotation component."
+Left_hand,CA,ThumbProximal_M13,matrix,m,number,58,"ThumbProximal pose matrix M13, row-major. World translation component."
+Left_hand,CB,ThumbProximal_M20,matrix,dimensionless,number,59,"ThumbProximal pose matrix M20, row-major. Rotation component."
+Left_hand,CC,ThumbProximal_M21,matrix,dimensionless,number,60,"ThumbProximal pose matrix M21, row-major. Rotation component."
+Left_hand,CD,ThumbProximal_M22,matrix,dimensionless,number,61,"ThumbProximal pose matrix M22, row-major. Rotation component."
+Left_hand,CE,ThumbProximal_M23,matrix,m,number,62,"ThumbProximal pose matrix M23, row-major. World translation component."
+Left_hand,CF,ThumbProximal_M30,matrix,dimensionless,number,63,"ThumbProximal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,CG,ThumbProximal_M31,matrix,dimensionless,number,64,"ThumbProximal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,CH,ThumbProximal_M32,matrix,dimensionless,number,65,"ThumbProximal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,CI,ThumbProximal_M33,matrix,dimensionless,number,66,"ThumbProximal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,CJ,ThumbProximal_x_m,position,m,number,54,ThumbProximal world x position; duplicates the same joint's M03 value.
+Left_hand,CK,ThumbProximal_y_m,position,m,number,58,ThumbProximal world y position; duplicates the same joint's M13 value.
+Left_hand,CL,ThumbProximal_z_m,position,m,number,62,ThumbProximal world z position; duplicates the same joint's M23 value.
+Left_hand,CM,ThumbProximal_valid,quality,0 or 1,integer,422,Original ThumbProximal valid flag. A 1 does not certify physical accuracy.
+Left_hand,CN,ThumbProximal_tracked,quality,0 or 1,integer,448,Original ThumbProximal tracked flag. A 1 does not certify physical accuracy.
+Left_hand,CO,ThumbDistal_M00,matrix,dimensionless,number,67,"ThumbDistal pose matrix M00, row-major. Rotation component."
+Left_hand,CP,ThumbDistal_M01,matrix,dimensionless,number,68,"ThumbDistal pose matrix M01, row-major. Rotation component."
+Left_hand,CQ,ThumbDistal_M02,matrix,dimensionless,number,69,"ThumbDistal pose matrix M02, row-major. Rotation component."
+Left_hand,CR,ThumbDistal_M03,matrix,m,number,70,"ThumbDistal pose matrix M03, row-major. World translation component."
+Left_hand,CS,ThumbDistal_M10,matrix,dimensionless,number,71,"ThumbDistal pose matrix M10, row-major. Rotation component."
+Left_hand,CT,ThumbDistal_M11,matrix,dimensionless,number,72,"ThumbDistal pose matrix M11, row-major. Rotation component."
+Left_hand,CU,ThumbDistal_M12,matrix,dimensionless,number,73,"ThumbDistal pose matrix M12, row-major. Rotation component."
+Left_hand,CV,ThumbDistal_M13,matrix,m,number,74,"ThumbDistal pose matrix M13, row-major. World translation component."
+Left_hand,CW,ThumbDistal_M20,matrix,dimensionless,number,75,"ThumbDistal pose matrix M20, row-major. Rotation component."
+Left_hand,CX,ThumbDistal_M21,matrix,dimensionless,number,76,"ThumbDistal pose matrix M21, row-major. Rotation component."
+Left_hand,CY,ThumbDistal_M22,matrix,dimensionless,number,77,"ThumbDistal pose matrix M22, row-major. Rotation component."
+Left_hand,CZ,ThumbDistal_M23,matrix,m,number,78,"ThumbDistal pose matrix M23, row-major. World translation component."
+Left_hand,DA,ThumbDistal_M30,matrix,dimensionless,number,79,"ThumbDistal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,DB,ThumbDistal_M31,matrix,dimensionless,number,80,"ThumbDistal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,DC,ThumbDistal_M32,matrix,dimensionless,number,81,"ThumbDistal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,DD,ThumbDistal_M33,matrix,dimensionless,number,82,"ThumbDistal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,DE,ThumbDistal_x_m,position,m,number,70,ThumbDistal world x position; duplicates the same joint's M03 value.
+Left_hand,DF,ThumbDistal_y_m,position,m,number,74,ThumbDistal world y position; duplicates the same joint's M13 value.
+Left_hand,DG,ThumbDistal_z_m,position,m,number,78,ThumbDistal world z position; duplicates the same joint's M23 value.
+Left_hand,DH,ThumbDistal_valid,quality,0 or 1,integer,423,Original ThumbDistal valid flag. A 1 does not certify physical accuracy.
+Left_hand,DI,ThumbDistal_tracked,quality,0 or 1,integer,449,Original ThumbDistal tracked flag. A 1 does not certify physical accuracy.
+Left_hand,DJ,ThumbTip_M00,matrix,dimensionless,number,83,"ThumbTip pose matrix M00, row-major. Rotation component."
+Left_hand,DK,ThumbTip_M01,matrix,dimensionless,number,84,"ThumbTip pose matrix M01, row-major. Rotation component."
+Left_hand,DL,ThumbTip_M02,matrix,dimensionless,number,85,"ThumbTip pose matrix M02, row-major. Rotation component."
+Left_hand,DM,ThumbTip_M03,matrix,m,number,86,"ThumbTip pose matrix M03, row-major. World translation component."
+Left_hand,DN,ThumbTip_M10,matrix,dimensionless,number,87,"ThumbTip pose matrix M10, row-major. Rotation component."
+Left_hand,DO,ThumbTip_M11,matrix,dimensionless,number,88,"ThumbTip pose matrix M11, row-major. Rotation component."
+Left_hand,DP,ThumbTip_M12,matrix,dimensionless,number,89,"ThumbTip pose matrix M12, row-major. Rotation component."
+Left_hand,DQ,ThumbTip_M13,matrix,m,number,90,"ThumbTip pose matrix M13, row-major. World translation component."
+Left_hand,DR,ThumbTip_M20,matrix,dimensionless,number,91,"ThumbTip pose matrix M20, row-major. Rotation component."
+Left_hand,DS,ThumbTip_M21,matrix,dimensionless,number,92,"ThumbTip pose matrix M21, row-major. Rotation component."
+Left_hand,DT,ThumbTip_M22,matrix,dimensionless,number,93,"ThumbTip pose matrix M22, row-major. Rotation component."
+Left_hand,DU,ThumbTip_M23,matrix,m,number,94,"ThumbTip pose matrix M23, row-major. World translation component."
+Left_hand,DV,ThumbTip_M30,matrix,dimensionless,number,95,"ThumbTip pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,DW,ThumbTip_M31,matrix,dimensionless,number,96,"ThumbTip pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,DX,ThumbTip_M32,matrix,dimensionless,number,97,"ThumbTip pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,DY,ThumbTip_M33,matrix,dimensionless,number,98,"ThumbTip pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,DZ,ThumbTip_x_m,position,m,number,86,ThumbTip world x position; duplicates the same joint's M03 value.
+Left_hand,EA,ThumbTip_y_m,position,m,number,90,ThumbTip world y position; duplicates the same joint's M13 value.
+Left_hand,EB,ThumbTip_z_m,position,m,number,94,ThumbTip world z position; duplicates the same joint's M23 value.
+Left_hand,EC,ThumbTip_valid,quality,0 or 1,integer,424,Original ThumbTip valid flag. A 1 does not certify physical accuracy.
+Left_hand,ED,ThumbTip_tracked,quality,0 or 1,integer,450,Original ThumbTip tracked flag. A 1 does not certify physical accuracy.
+Left_hand,EE,IndexMetacarpal_M00,matrix,dimensionless,number,99,"IndexMetacarpal pose matrix M00, row-major. Rotation component."
+Left_hand,EF,IndexMetacarpal_M01,matrix,dimensionless,number,100,"IndexMetacarpal pose matrix M01, row-major. Rotation component."
+Left_hand,EG,IndexMetacarpal_M02,matrix,dimensionless,number,101,"IndexMetacarpal pose matrix M02, row-major. Rotation component."
+Left_hand,EH,IndexMetacarpal_M03,matrix,m,number,102,"IndexMetacarpal pose matrix M03, row-major. World translation component."
+Left_hand,EI,IndexMetacarpal_M10,matrix,dimensionless,number,103,"IndexMetacarpal pose matrix M10, row-major. Rotation component."
+Left_hand,EJ,IndexMetacarpal_M11,matrix,dimensionless,number,104,"IndexMetacarpal pose matrix M11, row-major. Rotation component."
+Left_hand,EK,IndexMetacarpal_M12,matrix,dimensionless,number,105,"IndexMetacarpal pose matrix M12, row-major. Rotation component."
+Left_hand,EL,IndexMetacarpal_M13,matrix,m,number,106,"IndexMetacarpal pose matrix M13, row-major. World translation component."
+Left_hand,EM,IndexMetacarpal_M20,matrix,dimensionless,number,107,"IndexMetacarpal pose matrix M20, row-major. Rotation component."
+Left_hand,EN,IndexMetacarpal_M21,matrix,dimensionless,number,108,"IndexMetacarpal pose matrix M21, row-major. Rotation component."
+Left_hand,EO,IndexMetacarpal_M22,matrix,dimensionless,number,109,"IndexMetacarpal pose matrix M22, row-major. Rotation component."
+Left_hand,EP,IndexMetacarpal_M23,matrix,m,number,110,"IndexMetacarpal pose matrix M23, row-major. World translation component."
+Left_hand,EQ,IndexMetacarpal_M30,matrix,dimensionless,number,111,"IndexMetacarpal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,ER,IndexMetacarpal_M31,matrix,dimensionless,number,112,"IndexMetacarpal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,ES,IndexMetacarpal_M32,matrix,dimensionless,number,113,"IndexMetacarpal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,ET,IndexMetacarpal_M33,matrix,dimensionless,number,114,"IndexMetacarpal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,EU,IndexMetacarpal_x_m,position,m,number,102,IndexMetacarpal world x position; duplicates the same joint's M03 value.
+Left_hand,EV,IndexMetacarpal_y_m,position,m,number,106,IndexMetacarpal world y position; duplicates the same joint's M13 value.
+Left_hand,EW,IndexMetacarpal_z_m,position,m,number,110,IndexMetacarpal world z position; duplicates the same joint's M23 value.
+Left_hand,EX,IndexMetacarpal_valid,quality,0 or 1,integer,425,Original IndexMetacarpal valid flag. A 1 does not certify physical accuracy.
+Left_hand,EY,IndexMetacarpal_tracked,quality,0 or 1,integer,451,Original IndexMetacarpal tracked flag. A 1 does not certify physical accuracy.
+Left_hand,EZ,IndexProximal_M00,matrix,dimensionless,number,115,"IndexProximal pose matrix M00, row-major. Rotation component."
+Left_hand,FA,IndexProximal_M01,matrix,dimensionless,number,116,"IndexProximal pose matrix M01, row-major. Rotation component."
+Left_hand,FB,IndexProximal_M02,matrix,dimensionless,number,117,"IndexProximal pose matrix M02, row-major. Rotation component."
+Left_hand,FC,IndexProximal_M03,matrix,m,number,118,"IndexProximal pose matrix M03, row-major. World translation component."
+Left_hand,FD,IndexProximal_M10,matrix,dimensionless,number,119,"IndexProximal pose matrix M10, row-major. Rotation component."
+Left_hand,FE,IndexProximal_M11,matrix,dimensionless,number,120,"IndexProximal pose matrix M11, row-major. Rotation component."
+Left_hand,FF,IndexProximal_M12,matrix,dimensionless,number,121,"IndexProximal pose matrix M12, row-major. Rotation component."
+Left_hand,FG,IndexProximal_M13,matrix,m,number,122,"IndexProximal pose matrix M13, row-major. World translation component."
+Left_hand,FH,IndexProximal_M20,matrix,dimensionless,number,123,"IndexProximal pose matrix M20, row-major. Rotation component."
+Left_hand,FI,IndexProximal_M21,matrix,dimensionless,number,124,"IndexProximal pose matrix M21, row-major. Rotation component."
+Left_hand,FJ,IndexProximal_M22,matrix,dimensionless,number,125,"IndexProximal pose matrix M22, row-major. Rotation component."
+Left_hand,FK,IndexProximal_M23,matrix,m,number,126,"IndexProximal pose matrix M23, row-major. World translation component."
+Left_hand,FL,IndexProximal_M30,matrix,dimensionless,number,127,"IndexProximal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,FM,IndexProximal_M31,matrix,dimensionless,number,128,"IndexProximal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,FN,IndexProximal_M32,matrix,dimensionless,number,129,"IndexProximal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,FO,IndexProximal_M33,matrix,dimensionless,number,130,"IndexProximal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,FP,IndexProximal_x_m,position,m,number,118,IndexProximal world x position; duplicates the same joint's M03 value.
+Left_hand,FQ,IndexProximal_y_m,position,m,number,122,IndexProximal world y position; duplicates the same joint's M13 value.
+Left_hand,FR,IndexProximal_z_m,position,m,number,126,IndexProximal world z position; duplicates the same joint's M23 value.
+Left_hand,FS,IndexProximal_valid,quality,0 or 1,integer,426,Original IndexProximal valid flag. A 1 does not certify physical accuracy.
+Left_hand,FT,IndexProximal_tracked,quality,0 or 1,integer,452,Original IndexProximal tracked flag. A 1 does not certify physical accuracy.
+Left_hand,FU,IndexIntermediate_M00,matrix,dimensionless,number,131,"IndexIntermediate pose matrix M00, row-major. Rotation component."
+Left_hand,FV,IndexIntermediate_M01,matrix,dimensionless,number,132,"IndexIntermediate pose matrix M01, row-major. Rotation component."
+Left_hand,FW,IndexIntermediate_M02,matrix,dimensionless,number,133,"IndexIntermediate pose matrix M02, row-major. Rotation component."
+Left_hand,FX,IndexIntermediate_M03,matrix,m,number,134,"IndexIntermediate pose matrix M03, row-major. World translation component."
+Left_hand,FY,IndexIntermediate_M10,matrix,dimensionless,number,135,"IndexIntermediate pose matrix M10, row-major. Rotation component."
+Left_hand,FZ,IndexIntermediate_M11,matrix,dimensionless,number,136,"IndexIntermediate pose matrix M11, row-major. Rotation component."
+Left_hand,GA,IndexIntermediate_M12,matrix,dimensionless,number,137,"IndexIntermediate pose matrix M12, row-major. Rotation component."
+Left_hand,GB,IndexIntermediate_M13,matrix,m,number,138,"IndexIntermediate pose matrix M13, row-major. World translation component."
+Left_hand,GC,IndexIntermediate_M20,matrix,dimensionless,number,139,"IndexIntermediate pose matrix M20, row-major. Rotation component."
+Left_hand,GD,IndexIntermediate_M21,matrix,dimensionless,number,140,"IndexIntermediate pose matrix M21, row-major. Rotation component."
+Left_hand,GE,IndexIntermediate_M22,matrix,dimensionless,number,141,"IndexIntermediate pose matrix M22, row-major. Rotation component."
+Left_hand,GF,IndexIntermediate_M23,matrix,m,number,142,"IndexIntermediate pose matrix M23, row-major. World translation component."
+Left_hand,GG,IndexIntermediate_M30,matrix,dimensionless,number,143,"IndexIntermediate pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,GH,IndexIntermediate_M31,matrix,dimensionless,number,144,"IndexIntermediate pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,GI,IndexIntermediate_M32,matrix,dimensionless,number,145,"IndexIntermediate pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,GJ,IndexIntermediate_M33,matrix,dimensionless,number,146,"IndexIntermediate pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,GK,IndexIntermediate_x_m,position,m,number,134,IndexIntermediate world x position; duplicates the same joint's M03 value.
+Left_hand,GL,IndexIntermediate_y_m,position,m,number,138,IndexIntermediate world y position; duplicates the same joint's M13 value.
+Left_hand,GM,IndexIntermediate_z_m,position,m,number,142,IndexIntermediate world z position; duplicates the same joint's M23 value.
+Left_hand,GN,IndexIntermediate_valid,quality,0 or 1,integer,427,Original IndexIntermediate valid flag. A 1 does not certify physical accuracy.
+Left_hand,GO,IndexIntermediate_tracked,quality,0 or 1,integer,453,Original IndexIntermediate tracked flag. A 1 does not certify physical accuracy.
+Left_hand,GP,IndexDistal_M00,matrix,dimensionless,number,147,"IndexDistal pose matrix M00, row-major. Rotation component."
+Left_hand,GQ,IndexDistal_M01,matrix,dimensionless,number,148,"IndexDistal pose matrix M01, row-major. Rotation component."
+Left_hand,GR,IndexDistal_M02,matrix,dimensionless,number,149,"IndexDistal pose matrix M02, row-major. Rotation component."
+Left_hand,GS,IndexDistal_M03,matrix,m,number,150,"IndexDistal pose matrix M03, row-major. World translation component."
+Left_hand,GT,IndexDistal_M10,matrix,dimensionless,number,151,"IndexDistal pose matrix M10, row-major. Rotation component."
+Left_hand,GU,IndexDistal_M11,matrix,dimensionless,number,152,"IndexDistal pose matrix M11, row-major. Rotation component."
+Left_hand,GV,IndexDistal_M12,matrix,dimensionless,number,153,"IndexDistal pose matrix M12, row-major. Rotation component."
+Left_hand,GW,IndexDistal_M13,matrix,m,number,154,"IndexDistal pose matrix M13, row-major. World translation component."
+Left_hand,GX,IndexDistal_M20,matrix,dimensionless,number,155,"IndexDistal pose matrix M20, row-major. Rotation component."
+Left_hand,GY,IndexDistal_M21,matrix,dimensionless,number,156,"IndexDistal pose matrix M21, row-major. Rotation component."
+Left_hand,GZ,IndexDistal_M22,matrix,dimensionless,number,157,"IndexDistal pose matrix M22, row-major. Rotation component."
+Left_hand,HA,IndexDistal_M23,matrix,m,number,158,"IndexDistal pose matrix M23, row-major. World translation component."
+Left_hand,HB,IndexDistal_M30,matrix,dimensionless,number,159,"IndexDistal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,HC,IndexDistal_M31,matrix,dimensionless,number,160,"IndexDistal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,HD,IndexDistal_M32,matrix,dimensionless,number,161,"IndexDistal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,HE,IndexDistal_M33,matrix,dimensionless,number,162,"IndexDistal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,HF,IndexDistal_x_m,position,m,number,150,IndexDistal world x position; duplicates the same joint's M03 value.
+Left_hand,HG,IndexDistal_y_m,position,m,number,154,IndexDistal world y position; duplicates the same joint's M13 value.
+Left_hand,HH,IndexDistal_z_m,position,m,number,158,IndexDistal world z position; duplicates the same joint's M23 value.
+Left_hand,HI,IndexDistal_valid,quality,0 or 1,integer,428,Original IndexDistal valid flag. A 1 does not certify physical accuracy.
+Left_hand,HJ,IndexDistal_tracked,quality,0 or 1,integer,454,Original IndexDistal tracked flag. A 1 does not certify physical accuracy.
+Left_hand,HK,IndexTip_M00,matrix,dimensionless,number,163,"IndexTip pose matrix M00, row-major. Rotation component."
+Left_hand,HL,IndexTip_M01,matrix,dimensionless,number,164,"IndexTip pose matrix M01, row-major. Rotation component."
+Left_hand,HM,IndexTip_M02,matrix,dimensionless,number,165,"IndexTip pose matrix M02, row-major. Rotation component."
+Left_hand,HN,IndexTip_M03,matrix,m,number,166,"IndexTip pose matrix M03, row-major. World translation component."
+Left_hand,HO,IndexTip_M10,matrix,dimensionless,number,167,"IndexTip pose matrix M10, row-major. Rotation component."
+Left_hand,HP,IndexTip_M11,matrix,dimensionless,number,168,"IndexTip pose matrix M11, row-major. Rotation component."
+Left_hand,HQ,IndexTip_M12,matrix,dimensionless,number,169,"IndexTip pose matrix M12, row-major. Rotation component."
+Left_hand,HR,IndexTip_M13,matrix,m,number,170,"IndexTip pose matrix M13, row-major. World translation component."
+Left_hand,HS,IndexTip_M20,matrix,dimensionless,number,171,"IndexTip pose matrix M20, row-major. Rotation component."
+Left_hand,HT,IndexTip_M21,matrix,dimensionless,number,172,"IndexTip pose matrix M21, row-major. Rotation component."
+Left_hand,HU,IndexTip_M22,matrix,dimensionless,number,173,"IndexTip pose matrix M22, row-major. Rotation component."
+Left_hand,HV,IndexTip_M23,matrix,m,number,174,"IndexTip pose matrix M23, row-major. World translation component."
+Left_hand,HW,IndexTip_M30,matrix,dimensionless,number,175,"IndexTip pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,HX,IndexTip_M31,matrix,dimensionless,number,176,"IndexTip pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,HY,IndexTip_M32,matrix,dimensionless,number,177,"IndexTip pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,HZ,IndexTip_M33,matrix,dimensionless,number,178,"IndexTip pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,IA,IndexTip_x_m,position,m,number,166,IndexTip world x position; duplicates the same joint's M03 value.
+Left_hand,IB,IndexTip_y_m,position,m,number,170,IndexTip world y position; duplicates the same joint's M13 value.
+Left_hand,IC,IndexTip_z_m,position,m,number,174,IndexTip world z position; duplicates the same joint's M23 value.
+Left_hand,ID,IndexTip_valid,quality,0 or 1,integer,429,Original IndexTip valid flag. A 1 does not certify physical accuracy.
+Left_hand,IE,IndexTip_tracked,quality,0 or 1,integer,455,Original IndexTip tracked flag. A 1 does not certify physical accuracy.
+Left_hand,IF,MiddleMetacarpal_M00,matrix,dimensionless,number,179,"MiddleMetacarpal pose matrix M00, row-major. Rotation component."
+Left_hand,IG,MiddleMetacarpal_M01,matrix,dimensionless,number,180,"MiddleMetacarpal pose matrix M01, row-major. Rotation component."
+Left_hand,IH,MiddleMetacarpal_M02,matrix,dimensionless,number,181,"MiddleMetacarpal pose matrix M02, row-major. Rotation component."
+Left_hand,II,MiddleMetacarpal_M03,matrix,m,number,182,"MiddleMetacarpal pose matrix M03, row-major. World translation component."
+Left_hand,IJ,MiddleMetacarpal_M10,matrix,dimensionless,number,183,"MiddleMetacarpal pose matrix M10, row-major. Rotation component."
+Left_hand,IK,MiddleMetacarpal_M11,matrix,dimensionless,number,184,"MiddleMetacarpal pose matrix M11, row-major. Rotation component."
+Left_hand,IL,MiddleMetacarpal_M12,matrix,dimensionless,number,185,"MiddleMetacarpal pose matrix M12, row-major. Rotation component."
+Left_hand,IM,MiddleMetacarpal_M13,matrix,m,number,186,"MiddleMetacarpal pose matrix M13, row-major. World translation component."
+Left_hand,IN,MiddleMetacarpal_M20,matrix,dimensionless,number,187,"MiddleMetacarpal pose matrix M20, row-major. Rotation component."
+Left_hand,IO,MiddleMetacarpal_M21,matrix,dimensionless,number,188,"MiddleMetacarpal pose matrix M21, row-major. Rotation component."
+Left_hand,IP,MiddleMetacarpal_M22,matrix,dimensionless,number,189,"MiddleMetacarpal pose matrix M22, row-major. Rotation component."
+Left_hand,IQ,MiddleMetacarpal_M23,matrix,m,number,190,"MiddleMetacarpal pose matrix M23, row-major. World translation component."
+Left_hand,IR,MiddleMetacarpal_M30,matrix,dimensionless,number,191,"MiddleMetacarpal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,IS,MiddleMetacarpal_M31,matrix,dimensionless,number,192,"MiddleMetacarpal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,IT,MiddleMetacarpal_M32,matrix,dimensionless,number,193,"MiddleMetacarpal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,IU,MiddleMetacarpal_M33,matrix,dimensionless,number,194,"MiddleMetacarpal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,IV,MiddleMetacarpal_x_m,position,m,number,182,MiddleMetacarpal world x position; duplicates the same joint's M03 value.
+Left_hand,IW,MiddleMetacarpal_y_m,position,m,number,186,MiddleMetacarpal world y position; duplicates the same joint's M13 value.
+Left_hand,IX,MiddleMetacarpal_z_m,position,m,number,190,MiddleMetacarpal world z position; duplicates the same joint's M23 value.
+Left_hand,IY,MiddleMetacarpal_valid,quality,0 or 1,integer,430,Original MiddleMetacarpal valid flag. A 1 does not certify physical accuracy.
+Left_hand,IZ,MiddleMetacarpal_tracked,quality,0 or 1,integer,456,Original MiddleMetacarpal tracked flag. A 1 does not certify physical accuracy.
+Left_hand,JA,MiddleProximal_M00,matrix,dimensionless,number,195,"MiddleProximal pose matrix M00, row-major. Rotation component."
+Left_hand,JB,MiddleProximal_M01,matrix,dimensionless,number,196,"MiddleProximal pose matrix M01, row-major. Rotation component."
+Left_hand,JC,MiddleProximal_M02,matrix,dimensionless,number,197,"MiddleProximal pose matrix M02, row-major. Rotation component."
+Left_hand,JD,MiddleProximal_M03,matrix,m,number,198,"MiddleProximal pose matrix M03, row-major. World translation component."
+Left_hand,JE,MiddleProximal_M10,matrix,dimensionless,number,199,"MiddleProximal pose matrix M10, row-major. Rotation component."
+Left_hand,JF,MiddleProximal_M11,matrix,dimensionless,number,200,"MiddleProximal pose matrix M11, row-major. Rotation component."
+Left_hand,JG,MiddleProximal_M12,matrix,dimensionless,number,201,"MiddleProximal pose matrix M12, row-major. Rotation component."
+Left_hand,JH,MiddleProximal_M13,matrix,m,number,202,"MiddleProximal pose matrix M13, row-major. World translation component."
+Left_hand,JI,MiddleProximal_M20,matrix,dimensionless,number,203,"MiddleProximal pose matrix M20, row-major. Rotation component."
+Left_hand,JJ,MiddleProximal_M21,matrix,dimensionless,number,204,"MiddleProximal pose matrix M21, row-major. Rotation component."
+Left_hand,JK,MiddleProximal_M22,matrix,dimensionless,number,205,"MiddleProximal pose matrix M22, row-major. Rotation component."
+Left_hand,JL,MiddleProximal_M23,matrix,m,number,206,"MiddleProximal pose matrix M23, row-major. World translation component."
+Left_hand,JM,MiddleProximal_M30,matrix,dimensionless,number,207,"MiddleProximal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,JN,MiddleProximal_M31,matrix,dimensionless,number,208,"MiddleProximal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,JO,MiddleProximal_M32,matrix,dimensionless,number,209,"MiddleProximal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,JP,MiddleProximal_M33,matrix,dimensionless,number,210,"MiddleProximal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,JQ,MiddleProximal_x_m,position,m,number,198,MiddleProximal world x position; duplicates the same joint's M03 value.
+Left_hand,JR,MiddleProximal_y_m,position,m,number,202,MiddleProximal world y position; duplicates the same joint's M13 value.
+Left_hand,JS,MiddleProximal_z_m,position,m,number,206,MiddleProximal world z position; duplicates the same joint's M23 value.
+Left_hand,JT,MiddleProximal_valid,quality,0 or 1,integer,431,Original MiddleProximal valid flag. A 1 does not certify physical accuracy.
+Left_hand,JU,MiddleProximal_tracked,quality,0 or 1,integer,457,Original MiddleProximal tracked flag. A 1 does not certify physical accuracy.
+Left_hand,JV,MiddleIntermediate_M00,matrix,dimensionless,number,211,"MiddleIntermediate pose matrix M00, row-major. Rotation component."
+Left_hand,JW,MiddleIntermediate_M01,matrix,dimensionless,number,212,"MiddleIntermediate pose matrix M01, row-major. Rotation component."
+Left_hand,JX,MiddleIntermediate_M02,matrix,dimensionless,number,213,"MiddleIntermediate pose matrix M02, row-major. Rotation component."
+Left_hand,JY,MiddleIntermediate_M03,matrix,m,number,214,"MiddleIntermediate pose matrix M03, row-major. World translation component."
+Left_hand,JZ,MiddleIntermediate_M10,matrix,dimensionless,number,215,"MiddleIntermediate pose matrix M10, row-major. Rotation component."
+Left_hand,KA,MiddleIntermediate_M11,matrix,dimensionless,number,216,"MiddleIntermediate pose matrix M11, row-major. Rotation component."
+Left_hand,KB,MiddleIntermediate_M12,matrix,dimensionless,number,217,"MiddleIntermediate pose matrix M12, row-major. Rotation component."
+Left_hand,KC,MiddleIntermediate_M13,matrix,m,number,218,"MiddleIntermediate pose matrix M13, row-major. World translation component."
+Left_hand,KD,MiddleIntermediate_M20,matrix,dimensionless,number,219,"MiddleIntermediate pose matrix M20, row-major. Rotation component."
+Left_hand,KE,MiddleIntermediate_M21,matrix,dimensionless,number,220,"MiddleIntermediate pose matrix M21, row-major. Rotation component."
+Left_hand,KF,MiddleIntermediate_M22,matrix,dimensionless,number,221,"MiddleIntermediate pose matrix M22, row-major. Rotation component."
+Left_hand,KG,MiddleIntermediate_M23,matrix,m,number,222,"MiddleIntermediate pose matrix M23, row-major. World translation component."
+Left_hand,KH,MiddleIntermediate_M30,matrix,dimensionless,number,223,"MiddleIntermediate pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,KI,MiddleIntermediate_M31,matrix,dimensionless,number,224,"MiddleIntermediate pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,KJ,MiddleIntermediate_M32,matrix,dimensionless,number,225,"MiddleIntermediate pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,KK,MiddleIntermediate_M33,matrix,dimensionless,number,226,"MiddleIntermediate pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,KL,MiddleIntermediate_x_m,position,m,number,214,MiddleIntermediate world x position; duplicates the same joint's M03 value.
+Left_hand,KM,MiddleIntermediate_y_m,position,m,number,218,MiddleIntermediate world y position; duplicates the same joint's M13 value.
+Left_hand,KN,MiddleIntermediate_z_m,position,m,number,222,MiddleIntermediate world z position; duplicates the same joint's M23 value.
+Left_hand,KO,MiddleIntermediate_valid,quality,0 or 1,integer,432,Original MiddleIntermediate valid flag. A 1 does not certify physical accuracy.
+Left_hand,KP,MiddleIntermediate_tracked,quality,0 or 1,integer,458,Original MiddleIntermediate tracked flag. A 1 does not certify physical accuracy.
+Left_hand,KQ,MiddleDistal_M00,matrix,dimensionless,number,227,"MiddleDistal pose matrix M00, row-major. Rotation component."
+Left_hand,KR,MiddleDistal_M01,matrix,dimensionless,number,228,"MiddleDistal pose matrix M01, row-major. Rotation component."
+Left_hand,KS,MiddleDistal_M02,matrix,dimensionless,number,229,"MiddleDistal pose matrix M02, row-major. Rotation component."
+Left_hand,KT,MiddleDistal_M03,matrix,m,number,230,"MiddleDistal pose matrix M03, row-major. World translation component."
+Left_hand,KU,MiddleDistal_M10,matrix,dimensionless,number,231,"MiddleDistal pose matrix M10, row-major. Rotation component."
+Left_hand,KV,MiddleDistal_M11,matrix,dimensionless,number,232,"MiddleDistal pose matrix M11, row-major. Rotation component."
+Left_hand,KW,MiddleDistal_M12,matrix,dimensionless,number,233,"MiddleDistal pose matrix M12, row-major. Rotation component."
+Left_hand,KX,MiddleDistal_M13,matrix,m,number,234,"MiddleDistal pose matrix M13, row-major. World translation component."
+Left_hand,KY,MiddleDistal_M20,matrix,dimensionless,number,235,"MiddleDistal pose matrix M20, row-major. Rotation component."
+Left_hand,KZ,MiddleDistal_M21,matrix,dimensionless,number,236,"MiddleDistal pose matrix M21, row-major. Rotation component."
+Left_hand,LA,MiddleDistal_M22,matrix,dimensionless,number,237,"MiddleDistal pose matrix M22, row-major. Rotation component."
+Left_hand,LB,MiddleDistal_M23,matrix,m,number,238,"MiddleDistal pose matrix M23, row-major. World translation component."
+Left_hand,LC,MiddleDistal_M30,matrix,dimensionless,number,239,"MiddleDistal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,LD,MiddleDistal_M31,matrix,dimensionless,number,240,"MiddleDistal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,LE,MiddleDistal_M32,matrix,dimensionless,number,241,"MiddleDistal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,LF,MiddleDistal_M33,matrix,dimensionless,number,242,"MiddleDistal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,LG,MiddleDistal_x_m,position,m,number,230,MiddleDistal world x position; duplicates the same joint's M03 value.
+Left_hand,LH,MiddleDistal_y_m,position,m,number,234,MiddleDistal world y position; duplicates the same joint's M13 value.
+Left_hand,LI,MiddleDistal_z_m,position,m,number,238,MiddleDistal world z position; duplicates the same joint's M23 value.
+Left_hand,LJ,MiddleDistal_valid,quality,0 or 1,integer,433,Original MiddleDistal valid flag. A 1 does not certify physical accuracy.
+Left_hand,LK,MiddleDistal_tracked,quality,0 or 1,integer,459,Original MiddleDistal tracked flag. A 1 does not certify physical accuracy.
+Left_hand,LL,MiddleTip_M00,matrix,dimensionless,number,243,"MiddleTip pose matrix M00, row-major. Rotation component."
+Left_hand,LM,MiddleTip_M01,matrix,dimensionless,number,244,"MiddleTip pose matrix M01, row-major. Rotation component."
+Left_hand,LN,MiddleTip_M02,matrix,dimensionless,number,245,"MiddleTip pose matrix M02, row-major. Rotation component."
+Left_hand,LO,MiddleTip_M03,matrix,m,number,246,"MiddleTip pose matrix M03, row-major. World translation component."
+Left_hand,LP,MiddleTip_M10,matrix,dimensionless,number,247,"MiddleTip pose matrix M10, row-major. Rotation component."
+Left_hand,LQ,MiddleTip_M11,matrix,dimensionless,number,248,"MiddleTip pose matrix M11, row-major. Rotation component."
+Left_hand,LR,MiddleTip_M12,matrix,dimensionless,number,249,"MiddleTip pose matrix M12, row-major. Rotation component."
+Left_hand,LS,MiddleTip_M13,matrix,m,number,250,"MiddleTip pose matrix M13, row-major. World translation component."
+Left_hand,LT,MiddleTip_M20,matrix,dimensionless,number,251,"MiddleTip pose matrix M20, row-major. Rotation component."
+Left_hand,LU,MiddleTip_M21,matrix,dimensionless,number,252,"MiddleTip pose matrix M21, row-major. Rotation component."
+Left_hand,LV,MiddleTip_M22,matrix,dimensionless,number,253,"MiddleTip pose matrix M22, row-major. Rotation component."
+Left_hand,LW,MiddleTip_M23,matrix,m,number,254,"MiddleTip pose matrix M23, row-major. World translation component."
+Left_hand,LX,MiddleTip_M30,matrix,dimensionless,number,255,"MiddleTip pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,LY,MiddleTip_M31,matrix,dimensionless,number,256,"MiddleTip pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,LZ,MiddleTip_M32,matrix,dimensionless,number,257,"MiddleTip pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,MA,MiddleTip_M33,matrix,dimensionless,number,258,"MiddleTip pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,MB,MiddleTip_x_m,position,m,number,246,MiddleTip world x position; duplicates the same joint's M03 value.
+Left_hand,MC,MiddleTip_y_m,position,m,number,250,MiddleTip world y position; duplicates the same joint's M13 value.
+Left_hand,MD,MiddleTip_z_m,position,m,number,254,MiddleTip world z position; duplicates the same joint's M23 value.
+Left_hand,ME,MiddleTip_valid,quality,0 or 1,integer,434,Original MiddleTip valid flag. A 1 does not certify physical accuracy.
+Left_hand,MF,MiddleTip_tracked,quality,0 or 1,integer,460,Original MiddleTip tracked flag. A 1 does not certify physical accuracy.
+Left_hand,MG,RingMetacarpal_M00,matrix,dimensionless,number,259,"RingMetacarpal pose matrix M00, row-major. Rotation component."
+Left_hand,MH,RingMetacarpal_M01,matrix,dimensionless,number,260,"RingMetacarpal pose matrix M01, row-major. Rotation component."
+Left_hand,MI,RingMetacarpal_M02,matrix,dimensionless,number,261,"RingMetacarpal pose matrix M02, row-major. Rotation component."
+Left_hand,MJ,RingMetacarpal_M03,matrix,m,number,262,"RingMetacarpal pose matrix M03, row-major. World translation component."
+Left_hand,MK,RingMetacarpal_M10,matrix,dimensionless,number,263,"RingMetacarpal pose matrix M10, row-major. Rotation component."
+Left_hand,ML,RingMetacarpal_M11,matrix,dimensionless,number,264,"RingMetacarpal pose matrix M11, row-major. Rotation component."
+Left_hand,MM,RingMetacarpal_M12,matrix,dimensionless,number,265,"RingMetacarpal pose matrix M12, row-major. Rotation component."
+Left_hand,MN,RingMetacarpal_M13,matrix,m,number,266,"RingMetacarpal pose matrix M13, row-major. World translation component."
+Left_hand,MO,RingMetacarpal_M20,matrix,dimensionless,number,267,"RingMetacarpal pose matrix M20, row-major. Rotation component."
+Left_hand,MP,RingMetacarpal_M21,matrix,dimensionless,number,268,"RingMetacarpal pose matrix M21, row-major. Rotation component."
+Left_hand,MQ,RingMetacarpal_M22,matrix,dimensionless,number,269,"RingMetacarpal pose matrix M22, row-major. Rotation component."
+Left_hand,MR,RingMetacarpal_M23,matrix,m,number,270,"RingMetacarpal pose matrix M23, row-major. World translation component."
+Left_hand,MS,RingMetacarpal_M30,matrix,dimensionless,number,271,"RingMetacarpal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,MT,RingMetacarpal_M31,matrix,dimensionless,number,272,"RingMetacarpal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,MU,RingMetacarpal_M32,matrix,dimensionless,number,273,"RingMetacarpal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,MV,RingMetacarpal_M33,matrix,dimensionless,number,274,"RingMetacarpal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,MW,RingMetacarpal_x_m,position,m,number,262,RingMetacarpal world x position; duplicates the same joint's M03 value.
+Left_hand,MX,RingMetacarpal_y_m,position,m,number,266,RingMetacarpal world y position; duplicates the same joint's M13 value.
+Left_hand,MY,RingMetacarpal_z_m,position,m,number,270,RingMetacarpal world z position; duplicates the same joint's M23 value.
+Left_hand,MZ,RingMetacarpal_valid,quality,0 or 1,integer,435,Original RingMetacarpal valid flag. A 1 does not certify physical accuracy.
+Left_hand,NA,RingMetacarpal_tracked,quality,0 or 1,integer,461,Original RingMetacarpal tracked flag. A 1 does not certify physical accuracy.
+Left_hand,NB,RingProximal_M00,matrix,dimensionless,number,275,"RingProximal pose matrix M00, row-major. Rotation component."
+Left_hand,NC,RingProximal_M01,matrix,dimensionless,number,276,"RingProximal pose matrix M01, row-major. Rotation component."
+Left_hand,ND,RingProximal_M02,matrix,dimensionless,number,277,"RingProximal pose matrix M02, row-major. Rotation component."
+Left_hand,NE,RingProximal_M03,matrix,m,number,278,"RingProximal pose matrix M03, row-major. World translation component."
+Left_hand,NF,RingProximal_M10,matrix,dimensionless,number,279,"RingProximal pose matrix M10, row-major. Rotation component."
+Left_hand,NG,RingProximal_M11,matrix,dimensionless,number,280,"RingProximal pose matrix M11, row-major. Rotation component."
+Left_hand,NH,RingProximal_M12,matrix,dimensionless,number,281,"RingProximal pose matrix M12, row-major. Rotation component."
+Left_hand,NI,RingProximal_M13,matrix,m,number,282,"RingProximal pose matrix M13, row-major. World translation component."
+Left_hand,NJ,RingProximal_M20,matrix,dimensionless,number,283,"RingProximal pose matrix M20, row-major. Rotation component."
+Left_hand,NK,RingProximal_M21,matrix,dimensionless,number,284,"RingProximal pose matrix M21, row-major. Rotation component."
+Left_hand,NL,RingProximal_M22,matrix,dimensionless,number,285,"RingProximal pose matrix M22, row-major. Rotation component."
+Left_hand,NM,RingProximal_M23,matrix,m,number,286,"RingProximal pose matrix M23, row-major. World translation component."
+Left_hand,NN,RingProximal_M30,matrix,dimensionless,number,287,"RingProximal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,NO,RingProximal_M31,matrix,dimensionless,number,288,"RingProximal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,NP,RingProximal_M32,matrix,dimensionless,number,289,"RingProximal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,NQ,RingProximal_M33,matrix,dimensionless,number,290,"RingProximal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,NR,RingProximal_x_m,position,m,number,278,RingProximal world x position; duplicates the same joint's M03 value.
+Left_hand,NS,RingProximal_y_m,position,m,number,282,RingProximal world y position; duplicates the same joint's M13 value.
+Left_hand,NT,RingProximal_z_m,position,m,number,286,RingProximal world z position; duplicates the same joint's M23 value.
+Left_hand,NU,RingProximal_valid,quality,0 or 1,integer,436,Original RingProximal valid flag. A 1 does not certify physical accuracy.
+Left_hand,NV,RingProximal_tracked,quality,0 or 1,integer,462,Original RingProximal tracked flag. A 1 does not certify physical accuracy.
+Left_hand,NW,RingIntermediate_M00,matrix,dimensionless,number,291,"RingIntermediate pose matrix M00, row-major. Rotation component."
+Left_hand,NX,RingIntermediate_M01,matrix,dimensionless,number,292,"RingIntermediate pose matrix M01, row-major. Rotation component."
+Left_hand,NY,RingIntermediate_M02,matrix,dimensionless,number,293,"RingIntermediate pose matrix M02, row-major. Rotation component."
+Left_hand,NZ,RingIntermediate_M03,matrix,m,number,294,"RingIntermediate pose matrix M03, row-major. World translation component."
+Left_hand,OA,RingIntermediate_M10,matrix,dimensionless,number,295,"RingIntermediate pose matrix M10, row-major. Rotation component."
+Left_hand,OB,RingIntermediate_M11,matrix,dimensionless,number,296,"RingIntermediate pose matrix M11, row-major. Rotation component."
+Left_hand,OC,RingIntermediate_M12,matrix,dimensionless,number,297,"RingIntermediate pose matrix M12, row-major. Rotation component."
+Left_hand,OD,RingIntermediate_M13,matrix,m,number,298,"RingIntermediate pose matrix M13, row-major. World translation component."
+Left_hand,OE,RingIntermediate_M20,matrix,dimensionless,number,299,"RingIntermediate pose matrix M20, row-major. Rotation component."
+Left_hand,OF,RingIntermediate_M21,matrix,dimensionless,number,300,"RingIntermediate pose matrix M21, row-major. Rotation component."
+Left_hand,OG,RingIntermediate_M22,matrix,dimensionless,number,301,"RingIntermediate pose matrix M22, row-major. Rotation component."
+Left_hand,OH,RingIntermediate_M23,matrix,m,number,302,"RingIntermediate pose matrix M23, row-major. World translation component."
+Left_hand,OI,RingIntermediate_M30,matrix,dimensionless,number,303,"RingIntermediate pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,OJ,RingIntermediate_M31,matrix,dimensionless,number,304,"RingIntermediate pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,OK,RingIntermediate_M32,matrix,dimensionless,number,305,"RingIntermediate pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,OL,RingIntermediate_M33,matrix,dimensionless,number,306,"RingIntermediate pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,OM,RingIntermediate_x_m,position,m,number,294,RingIntermediate world x position; duplicates the same joint's M03 value.
+Left_hand,ON,RingIntermediate_y_m,position,m,number,298,RingIntermediate world y position; duplicates the same joint's M13 value.
+Left_hand,OO,RingIntermediate_z_m,position,m,number,302,RingIntermediate world z position; duplicates the same joint's M23 value.
+Left_hand,OP,RingIntermediate_valid,quality,0 or 1,integer,437,Original RingIntermediate valid flag. A 1 does not certify physical accuracy.
+Left_hand,OQ,RingIntermediate_tracked,quality,0 or 1,integer,463,Original RingIntermediate tracked flag. A 1 does not certify physical accuracy.
+Left_hand,OR,RingDistal_M00,matrix,dimensionless,number,307,"RingDistal pose matrix M00, row-major. Rotation component."
+Left_hand,OS,RingDistal_M01,matrix,dimensionless,number,308,"RingDistal pose matrix M01, row-major. Rotation component."
+Left_hand,OT,RingDistal_M02,matrix,dimensionless,number,309,"RingDistal pose matrix M02, row-major. Rotation component."
+Left_hand,OU,RingDistal_M03,matrix,m,number,310,"RingDistal pose matrix M03, row-major. World translation component."
+Left_hand,OV,RingDistal_M10,matrix,dimensionless,number,311,"RingDistal pose matrix M10, row-major. Rotation component."
+Left_hand,OW,RingDistal_M11,matrix,dimensionless,number,312,"RingDistal pose matrix M11, row-major. Rotation component."
+Left_hand,OX,RingDistal_M12,matrix,dimensionless,number,313,"RingDistal pose matrix M12, row-major. Rotation component."
+Left_hand,OY,RingDistal_M13,matrix,m,number,314,"RingDistal pose matrix M13, row-major. World translation component."
+Left_hand,OZ,RingDistal_M20,matrix,dimensionless,number,315,"RingDistal pose matrix M20, row-major. Rotation component."
+Left_hand,PA,RingDistal_M21,matrix,dimensionless,number,316,"RingDistal pose matrix M21, row-major. Rotation component."
+Left_hand,PB,RingDistal_M22,matrix,dimensionless,number,317,"RingDistal pose matrix M22, row-major. Rotation component."
+Left_hand,PC,RingDistal_M23,matrix,m,number,318,"RingDistal pose matrix M23, row-major. World translation component."
+Left_hand,PD,RingDistal_M30,matrix,dimensionless,number,319,"RingDistal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,PE,RingDistal_M31,matrix,dimensionless,number,320,"RingDistal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,PF,RingDistal_M32,matrix,dimensionless,number,321,"RingDistal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,PG,RingDistal_M33,matrix,dimensionless,number,322,"RingDistal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,PH,RingDistal_x_m,position,m,number,310,RingDistal world x position; duplicates the same joint's M03 value.
+Left_hand,PI,RingDistal_y_m,position,m,number,314,RingDistal world y position; duplicates the same joint's M13 value.
+Left_hand,PJ,RingDistal_z_m,position,m,number,318,RingDistal world z position; duplicates the same joint's M23 value.
+Left_hand,PK,RingDistal_valid,quality,0 or 1,integer,438,Original RingDistal valid flag. A 1 does not certify physical accuracy.
+Left_hand,PL,RingDistal_tracked,quality,0 or 1,integer,464,Original RingDistal tracked flag. A 1 does not certify physical accuracy.
+Left_hand,PM,RingTip_M00,matrix,dimensionless,number,323,"RingTip pose matrix M00, row-major. Rotation component."
+Left_hand,PN,RingTip_M01,matrix,dimensionless,number,324,"RingTip pose matrix M01, row-major. Rotation component."
+Left_hand,PO,RingTip_M02,matrix,dimensionless,number,325,"RingTip pose matrix M02, row-major. Rotation component."
+Left_hand,PP,RingTip_M03,matrix,m,number,326,"RingTip pose matrix M03, row-major. World translation component."
+Left_hand,PQ,RingTip_M10,matrix,dimensionless,number,327,"RingTip pose matrix M10, row-major. Rotation component."
+Left_hand,PR,RingTip_M11,matrix,dimensionless,number,328,"RingTip pose matrix M11, row-major. Rotation component."
+Left_hand,PS,RingTip_M12,matrix,dimensionless,number,329,"RingTip pose matrix M12, row-major. Rotation component."
+Left_hand,PT,RingTip_M13,matrix,m,number,330,"RingTip pose matrix M13, row-major. World translation component."
+Left_hand,PU,RingTip_M20,matrix,dimensionless,number,331,"RingTip pose matrix M20, row-major. Rotation component."
+Left_hand,PV,RingTip_M21,matrix,dimensionless,number,332,"RingTip pose matrix M21, row-major. Rotation component."
+Left_hand,PW,RingTip_M22,matrix,dimensionless,number,333,"RingTip pose matrix M22, row-major. Rotation component."
+Left_hand,PX,RingTip_M23,matrix,m,number,334,"RingTip pose matrix M23, row-major. World translation component."
+Left_hand,PY,RingTip_M30,matrix,dimensionless,number,335,"RingTip pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,PZ,RingTip_M31,matrix,dimensionless,number,336,"RingTip pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,QA,RingTip_M32,matrix,dimensionless,number,337,"RingTip pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,QB,RingTip_M33,matrix,dimensionless,number,338,"RingTip pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,QC,RingTip_x_m,position,m,number,326,RingTip world x position; duplicates the same joint's M03 value.
+Left_hand,QD,RingTip_y_m,position,m,number,330,RingTip world y position; duplicates the same joint's M13 value.
+Left_hand,QE,RingTip_z_m,position,m,number,334,RingTip world z position; duplicates the same joint's M23 value.
+Left_hand,QF,RingTip_valid,quality,0 or 1,integer,439,Original RingTip valid flag. A 1 does not certify physical accuracy.
+Left_hand,QG,RingTip_tracked,quality,0 or 1,integer,465,Original RingTip tracked flag. A 1 does not certify physical accuracy.
+Left_hand,QH,PinkyMetacarpal_M00,matrix,dimensionless,number,339,"PinkyMetacarpal pose matrix M00, row-major. Rotation component."
+Left_hand,QI,PinkyMetacarpal_M01,matrix,dimensionless,number,340,"PinkyMetacarpal pose matrix M01, row-major. Rotation component."
+Left_hand,QJ,PinkyMetacarpal_M02,matrix,dimensionless,number,341,"PinkyMetacarpal pose matrix M02, row-major. Rotation component."
+Left_hand,QK,PinkyMetacarpal_M03,matrix,m,number,342,"PinkyMetacarpal pose matrix M03, row-major. World translation component."
+Left_hand,QL,PinkyMetacarpal_M10,matrix,dimensionless,number,343,"PinkyMetacarpal pose matrix M10, row-major. Rotation component."
+Left_hand,QM,PinkyMetacarpal_M11,matrix,dimensionless,number,344,"PinkyMetacarpal pose matrix M11, row-major. Rotation component."
+Left_hand,QN,PinkyMetacarpal_M12,matrix,dimensionless,number,345,"PinkyMetacarpal pose matrix M12, row-major. Rotation component."
+Left_hand,QO,PinkyMetacarpal_M13,matrix,m,number,346,"PinkyMetacarpal pose matrix M13, row-major. World translation component."
+Left_hand,QP,PinkyMetacarpal_M20,matrix,dimensionless,number,347,"PinkyMetacarpal pose matrix M20, row-major. Rotation component."
+Left_hand,QQ,PinkyMetacarpal_M21,matrix,dimensionless,number,348,"PinkyMetacarpal pose matrix M21, row-major. Rotation component."
+Left_hand,QR,PinkyMetacarpal_M22,matrix,dimensionless,number,349,"PinkyMetacarpal pose matrix M22, row-major. Rotation component."
+Left_hand,QS,PinkyMetacarpal_M23,matrix,m,number,350,"PinkyMetacarpal pose matrix M23, row-major. World translation component."
+Left_hand,QT,PinkyMetacarpal_M30,matrix,dimensionless,number,351,"PinkyMetacarpal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,QU,PinkyMetacarpal_M31,matrix,dimensionless,number,352,"PinkyMetacarpal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,QV,PinkyMetacarpal_M32,matrix,dimensionless,number,353,"PinkyMetacarpal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,QW,PinkyMetacarpal_M33,matrix,dimensionless,number,354,"PinkyMetacarpal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,QX,PinkyMetacarpal_x_m,position,m,number,342,PinkyMetacarpal world x position; duplicates the same joint's M03 value.
+Left_hand,QY,PinkyMetacarpal_y_m,position,m,number,346,PinkyMetacarpal world y position; duplicates the same joint's M13 value.
+Left_hand,QZ,PinkyMetacarpal_z_m,position,m,number,350,PinkyMetacarpal world z position; duplicates the same joint's M23 value.
+Left_hand,RA,PinkyMetacarpal_valid,quality,0 or 1,integer,440,Original PinkyMetacarpal valid flag. A 1 does not certify physical accuracy.
+Left_hand,RB,PinkyMetacarpal_tracked,quality,0 or 1,integer,466,Original PinkyMetacarpal tracked flag. A 1 does not certify physical accuracy.
+Left_hand,RC,PinkyProximal_M00,matrix,dimensionless,number,355,"PinkyProximal pose matrix M00, row-major. Rotation component."
+Left_hand,RD,PinkyProximal_M01,matrix,dimensionless,number,356,"PinkyProximal pose matrix M01, row-major. Rotation component."
+Left_hand,RE,PinkyProximal_M02,matrix,dimensionless,number,357,"PinkyProximal pose matrix M02, row-major. Rotation component."
+Left_hand,RF,PinkyProximal_M03,matrix,m,number,358,"PinkyProximal pose matrix M03, row-major. World translation component."
+Left_hand,RG,PinkyProximal_M10,matrix,dimensionless,number,359,"PinkyProximal pose matrix M10, row-major. Rotation component."
+Left_hand,RH,PinkyProximal_M11,matrix,dimensionless,number,360,"PinkyProximal pose matrix M11, row-major. Rotation component."
+Left_hand,RI,PinkyProximal_M12,matrix,dimensionless,number,361,"PinkyProximal pose matrix M12, row-major. Rotation component."
+Left_hand,RJ,PinkyProximal_M13,matrix,m,number,362,"PinkyProximal pose matrix M13, row-major. World translation component."
+Left_hand,RK,PinkyProximal_M20,matrix,dimensionless,number,363,"PinkyProximal pose matrix M20, row-major. Rotation component."
+Left_hand,RL,PinkyProximal_M21,matrix,dimensionless,number,364,"PinkyProximal pose matrix M21, row-major. Rotation component."
+Left_hand,RM,PinkyProximal_M22,matrix,dimensionless,number,365,"PinkyProximal pose matrix M22, row-major. Rotation component."
+Left_hand,RN,PinkyProximal_M23,matrix,m,number,366,"PinkyProximal pose matrix M23, row-major. World translation component."
+Left_hand,RO,PinkyProximal_M30,matrix,dimensionless,number,367,"PinkyProximal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,RP,PinkyProximal_M31,matrix,dimensionless,number,368,"PinkyProximal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,RQ,PinkyProximal_M32,matrix,dimensionless,number,369,"PinkyProximal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,RR,PinkyProximal_M33,matrix,dimensionless,number,370,"PinkyProximal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,RS,PinkyProximal_x_m,position,m,number,358,PinkyProximal world x position; duplicates the same joint's M03 value.
+Left_hand,RT,PinkyProximal_y_m,position,m,number,362,PinkyProximal world y position; duplicates the same joint's M13 value.
+Left_hand,RU,PinkyProximal_z_m,position,m,number,366,PinkyProximal world z position; duplicates the same joint's M23 value.
+Left_hand,RV,PinkyProximal_valid,quality,0 or 1,integer,441,Original PinkyProximal valid flag. A 1 does not certify physical accuracy.
+Left_hand,RW,PinkyProximal_tracked,quality,0 or 1,integer,467,Original PinkyProximal tracked flag. A 1 does not certify physical accuracy.
+Left_hand,RX,PinkyIntermediate_M00,matrix,dimensionless,number,371,"PinkyIntermediate pose matrix M00, row-major. Rotation component."
+Left_hand,RY,PinkyIntermediate_M01,matrix,dimensionless,number,372,"PinkyIntermediate pose matrix M01, row-major. Rotation component."
+Left_hand,RZ,PinkyIntermediate_M02,matrix,dimensionless,number,373,"PinkyIntermediate pose matrix M02, row-major. Rotation component."
+Left_hand,SA,PinkyIntermediate_M03,matrix,m,number,374,"PinkyIntermediate pose matrix M03, row-major. World translation component."
+Left_hand,SB,PinkyIntermediate_M10,matrix,dimensionless,number,375,"PinkyIntermediate pose matrix M10, row-major. Rotation component."
+Left_hand,SC,PinkyIntermediate_M11,matrix,dimensionless,number,376,"PinkyIntermediate pose matrix M11, row-major. Rotation component."
+Left_hand,SD,PinkyIntermediate_M12,matrix,dimensionless,number,377,"PinkyIntermediate pose matrix M12, row-major. Rotation component."
+Left_hand,SE,PinkyIntermediate_M13,matrix,m,number,378,"PinkyIntermediate pose matrix M13, row-major. World translation component."
+Left_hand,SF,PinkyIntermediate_M20,matrix,dimensionless,number,379,"PinkyIntermediate pose matrix M20, row-major. Rotation component."
+Left_hand,SG,PinkyIntermediate_M21,matrix,dimensionless,number,380,"PinkyIntermediate pose matrix M21, row-major. Rotation component."
+Left_hand,SH,PinkyIntermediate_M22,matrix,dimensionless,number,381,"PinkyIntermediate pose matrix M22, row-major. Rotation component."
+Left_hand,SI,PinkyIntermediate_M23,matrix,m,number,382,"PinkyIntermediate pose matrix M23, row-major. World translation component."
+Left_hand,SJ,PinkyIntermediate_M30,matrix,dimensionless,number,383,"PinkyIntermediate pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,SK,PinkyIntermediate_M31,matrix,dimensionless,number,384,"PinkyIntermediate pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,SL,PinkyIntermediate_M32,matrix,dimensionless,number,385,"PinkyIntermediate pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,SM,PinkyIntermediate_M33,matrix,dimensionless,number,386,"PinkyIntermediate pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,SN,PinkyIntermediate_x_m,position,m,number,374,PinkyIntermediate world x position; duplicates the same joint's M03 value.
+Left_hand,SO,PinkyIntermediate_y_m,position,m,number,378,PinkyIntermediate world y position; duplicates the same joint's M13 value.
+Left_hand,SP,PinkyIntermediate_z_m,position,m,number,382,PinkyIntermediate world z position; duplicates the same joint's M23 value.
+Left_hand,SQ,PinkyIntermediate_valid,quality,0 or 1,integer,442,Original PinkyIntermediate valid flag. A 1 does not certify physical accuracy.
+Left_hand,SR,PinkyIntermediate_tracked,quality,0 or 1,integer,468,Original PinkyIntermediate tracked flag. A 1 does not certify physical accuracy.
+Left_hand,SS,PinkyDistal_M00,matrix,dimensionless,number,387,"PinkyDistal pose matrix M00, row-major. Rotation component."
+Left_hand,ST,PinkyDistal_M01,matrix,dimensionless,number,388,"PinkyDistal pose matrix M01, row-major. Rotation component."
+Left_hand,SU,PinkyDistal_M02,matrix,dimensionless,number,389,"PinkyDistal pose matrix M02, row-major. Rotation component."
+Left_hand,SV,PinkyDistal_M03,matrix,m,number,390,"PinkyDistal pose matrix M03, row-major. World translation component."
+Left_hand,SW,PinkyDistal_M10,matrix,dimensionless,number,391,"PinkyDistal pose matrix M10, row-major. Rotation component."
+Left_hand,SX,PinkyDistal_M11,matrix,dimensionless,number,392,"PinkyDistal pose matrix M11, row-major. Rotation component."
+Left_hand,SY,PinkyDistal_M12,matrix,dimensionless,number,393,"PinkyDistal pose matrix M12, row-major. Rotation component."
+Left_hand,SZ,PinkyDistal_M13,matrix,m,number,394,"PinkyDistal pose matrix M13, row-major. World translation component."
+Left_hand,TA,PinkyDistal_M20,matrix,dimensionless,number,395,"PinkyDistal pose matrix M20, row-major. Rotation component."
+Left_hand,TB,PinkyDistal_M21,matrix,dimensionless,number,396,"PinkyDistal pose matrix M21, row-major. Rotation component."
+Left_hand,TC,PinkyDistal_M22,matrix,dimensionless,number,397,"PinkyDistal pose matrix M22, row-major. Rotation component."
+Left_hand,TD,PinkyDistal_M23,matrix,m,number,398,"PinkyDistal pose matrix M23, row-major. World translation component."
+Left_hand,TE,PinkyDistal_M30,matrix,dimensionless,number,399,"PinkyDistal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,TF,PinkyDistal_M31,matrix,dimensionless,number,400,"PinkyDistal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,TG,PinkyDistal_M32,matrix,dimensionless,number,401,"PinkyDistal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,TH,PinkyDistal_M33,matrix,dimensionless,number,402,"PinkyDistal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,TI,PinkyDistal_x_m,position,m,number,390,PinkyDistal world x position; duplicates the same joint's M03 value.
+Left_hand,TJ,PinkyDistal_y_m,position,m,number,394,PinkyDistal world y position; duplicates the same joint's M13 value.
+Left_hand,TK,PinkyDistal_z_m,position,m,number,398,PinkyDistal world z position; duplicates the same joint's M23 value.
+Left_hand,TL,PinkyDistal_valid,quality,0 or 1,integer,443,Original PinkyDistal valid flag. A 1 does not certify physical accuracy.
+Left_hand,TM,PinkyDistal_tracked,quality,0 or 1,integer,469,Original PinkyDistal tracked flag. A 1 does not certify physical accuracy.
+Left_hand,TN,PinkyTip_M00,matrix,dimensionless,number,403,"PinkyTip pose matrix M00, row-major. Rotation component."
+Left_hand,TO,PinkyTip_M01,matrix,dimensionless,number,404,"PinkyTip pose matrix M01, row-major. Rotation component."
+Left_hand,TP,PinkyTip_M02,matrix,dimensionless,number,405,"PinkyTip pose matrix M02, row-major. Rotation component."
+Left_hand,TQ,PinkyTip_M03,matrix,m,number,406,"PinkyTip pose matrix M03, row-major. World translation component."
+Left_hand,TR,PinkyTip_M10,matrix,dimensionless,number,407,"PinkyTip pose matrix M10, row-major. Rotation component."
+Left_hand,TS,PinkyTip_M11,matrix,dimensionless,number,408,"PinkyTip pose matrix M11, row-major. Rotation component."
+Left_hand,TT,PinkyTip_M12,matrix,dimensionless,number,409,"PinkyTip pose matrix M12, row-major. Rotation component."
+Left_hand,TU,PinkyTip_M13,matrix,m,number,410,"PinkyTip pose matrix M13, row-major. World translation component."
+Left_hand,TV,PinkyTip_M20,matrix,dimensionless,number,411,"PinkyTip pose matrix M20, row-major. Rotation component."
+Left_hand,TW,PinkyTip_M21,matrix,dimensionless,number,412,"PinkyTip pose matrix M21, row-major. Rotation component."
+Left_hand,TX,PinkyTip_M22,matrix,dimensionless,number,413,"PinkyTip pose matrix M22, row-major. Rotation component."
+Left_hand,TY,PinkyTip_M23,matrix,m,number,414,"PinkyTip pose matrix M23, row-major. World translation component."
+Left_hand,TZ,PinkyTip_M30,matrix,dimensionless,number,415,"PinkyTip pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,UA,PinkyTip_M31,matrix,dimensionless,number,416,"PinkyTip pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,UB,PinkyTip_M32,matrix,dimensionless,number,417,"PinkyTip pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,UC,PinkyTip_M33,matrix,dimensionless,number,418,"PinkyTip pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Left_hand,UD,PinkyTip_x_m,position,m,number,406,PinkyTip world x position; duplicates the same joint's M03 value.
+Left_hand,UE,PinkyTip_y_m,position,m,number,410,PinkyTip world y position; duplicates the same joint's M13 value.
+Left_hand,UF,PinkyTip_z_m,position,m,number,414,PinkyTip world z position; duplicates the same joint's M23 value.
+Left_hand,UG,PinkyTip_valid,quality,0 or 1,integer,444,Original PinkyTip valid flag. A 1 does not certify physical accuracy.
+Left_hand,UH,PinkyTip_tracked,quality,0 or 1,integer,470,Original PinkyTip tracked flag. A 1 does not certify physical accuracy.
+Right_hand,A,source_sync_time_s,time,s,number,0,"Original synchronized-grid time, preserved separately from sensor time."
+Right_hand,B,sensor_timestamp_ticks_text,time,100 ns UTC ticks,text,1,Exact original .NET timestamp since 0001-01-01; do not convert to an Excel numeric cell.
+Right_hand,C,video_time_s,time,s,number,derived,(integer sensor ticks - original MP4 start ticks) / 10000000.
+Right_hand,D,clip_time_s,time,s,number,derived,video_time_s - actual selected original-video start time; can repeat.
+Right_hand,E,nearest_video_frame,alignment,frame index,integer,derived,"Nearest decoded original MP4 frame, zero-based; not clip-frame number."
+Right_hand,F,nearest_video_time_s,alignment,s,number,derived,Presentation timestamp of nearest original MP4 frame.
+Right_hand,G,sensor_minus_video_ms,alignment,ms,number,derived,1000 * (video_time_s - nearest_video_time_s); signed timing residual.
+Right_hand,H,hand_active,quality,0 or 1,integer,2,Original hand active flag; combine with joint validity/tracking and finite-value checks.
+Right_hand,I,Palm_M00,matrix,dimensionless,number,3,"Palm pose matrix M00, row-major. Rotation component."
+Right_hand,J,Palm_M01,matrix,dimensionless,number,4,"Palm pose matrix M01, row-major. Rotation component."
+Right_hand,K,Palm_M02,matrix,dimensionless,number,5,"Palm pose matrix M02, row-major. Rotation component."
+Right_hand,L,Palm_M03,matrix,m,number,6,"Palm pose matrix M03, row-major. World translation component."
+Right_hand,M,Palm_M10,matrix,dimensionless,number,7,"Palm pose matrix M10, row-major. Rotation component."
+Right_hand,N,Palm_M11,matrix,dimensionless,number,8,"Palm pose matrix M11, row-major. Rotation component."
+Right_hand,O,Palm_M12,matrix,dimensionless,number,9,"Palm pose matrix M12, row-major. Rotation component."
+Right_hand,P,Palm_M13,matrix,m,number,10,"Palm pose matrix M13, row-major. World translation component."
+Right_hand,Q,Palm_M20,matrix,dimensionless,number,11,"Palm pose matrix M20, row-major. Rotation component."
+Right_hand,R,Palm_M21,matrix,dimensionless,number,12,"Palm pose matrix M21, row-major. Rotation component."
+Right_hand,S,Palm_M22,matrix,dimensionless,number,13,"Palm pose matrix M22, row-major. Rotation component."
+Right_hand,T,Palm_M23,matrix,m,number,14,"Palm pose matrix M23, row-major. World translation component."
+Right_hand,U,Palm_M30,matrix,dimensionless,number,15,"Palm pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,V,Palm_M31,matrix,dimensionless,number,16,"Palm pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,W,Palm_M32,matrix,dimensionless,number,17,"Palm pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,X,Palm_M33,matrix,dimensionless,number,18,"Palm pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,Y,Palm_x_m,position,m,number,6,Palm world x position; duplicates the same joint's M03 value.
+Right_hand,Z,Palm_y_m,position,m,number,10,Palm world y position; duplicates the same joint's M13 value.
+Right_hand,AA,Palm_z_m,position,m,number,14,Palm world z position; duplicates the same joint's M23 value.
+Right_hand,AB,Palm_valid,quality,0 or 1,integer,419,Original Palm valid flag. A 1 does not certify physical accuracy.
+Right_hand,AC,Palm_tracked,quality,0 or 1,integer,445,Original Palm tracked flag. A 1 does not certify physical accuracy.
+Right_hand,AD,Wrist_M00,matrix,dimensionless,number,19,"Wrist pose matrix M00, row-major. Rotation component."
+Right_hand,AE,Wrist_M01,matrix,dimensionless,number,20,"Wrist pose matrix M01, row-major. Rotation component."
+Right_hand,AF,Wrist_M02,matrix,dimensionless,number,21,"Wrist pose matrix M02, row-major. Rotation component."
+Right_hand,AG,Wrist_M03,matrix,m,number,22,"Wrist pose matrix M03, row-major. World translation component."
+Right_hand,AH,Wrist_M10,matrix,dimensionless,number,23,"Wrist pose matrix M10, row-major. Rotation component."
+Right_hand,AI,Wrist_M11,matrix,dimensionless,number,24,"Wrist pose matrix M11, row-major. Rotation component."
+Right_hand,AJ,Wrist_M12,matrix,dimensionless,number,25,"Wrist pose matrix M12, row-major. Rotation component."
+Right_hand,AK,Wrist_M13,matrix,m,number,26,"Wrist pose matrix M13, row-major. World translation component."
+Right_hand,AL,Wrist_M20,matrix,dimensionless,number,27,"Wrist pose matrix M20, row-major. Rotation component."
+Right_hand,AM,Wrist_M21,matrix,dimensionless,number,28,"Wrist pose matrix M21, row-major. Rotation component."
+Right_hand,AN,Wrist_M22,matrix,dimensionless,number,29,"Wrist pose matrix M22, row-major. Rotation component."
+Right_hand,AO,Wrist_M23,matrix,m,number,30,"Wrist pose matrix M23, row-major. World translation component."
+Right_hand,AP,Wrist_M30,matrix,dimensionless,number,31,"Wrist pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,AQ,Wrist_M31,matrix,dimensionless,number,32,"Wrist pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,AR,Wrist_M32,matrix,dimensionless,number,33,"Wrist pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,AS,Wrist_M33,matrix,dimensionless,number,34,"Wrist pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,AT,Wrist_x_m,position,m,number,22,Wrist world x position; duplicates the same joint's M03 value.
+Right_hand,AU,Wrist_y_m,position,m,number,26,Wrist world y position; duplicates the same joint's M13 value.
+Right_hand,AV,Wrist_z_m,position,m,number,30,Wrist world z position; duplicates the same joint's M23 value.
+Right_hand,AW,Wrist_valid,quality,0 or 1,integer,420,Original Wrist valid flag. A 1 does not certify physical accuracy.
+Right_hand,AX,Wrist_tracked,quality,0 or 1,integer,446,Original Wrist tracked flag. A 1 does not certify physical accuracy.
+Right_hand,AY,ThumbMetacarpal_M00,matrix,dimensionless,number,35,"ThumbMetacarpal pose matrix M00, row-major. Rotation component."
+Right_hand,AZ,ThumbMetacarpal_M01,matrix,dimensionless,number,36,"ThumbMetacarpal pose matrix M01, row-major. Rotation component."
+Right_hand,BA,ThumbMetacarpal_M02,matrix,dimensionless,number,37,"ThumbMetacarpal pose matrix M02, row-major. Rotation component."
+Right_hand,BB,ThumbMetacarpal_M03,matrix,m,number,38,"ThumbMetacarpal pose matrix M03, row-major. World translation component."
+Right_hand,BC,ThumbMetacarpal_M10,matrix,dimensionless,number,39,"ThumbMetacarpal pose matrix M10, row-major. Rotation component."
+Right_hand,BD,ThumbMetacarpal_M11,matrix,dimensionless,number,40,"ThumbMetacarpal pose matrix M11, row-major. Rotation component."
+Right_hand,BE,ThumbMetacarpal_M12,matrix,dimensionless,number,41,"ThumbMetacarpal pose matrix M12, row-major. Rotation component."
+Right_hand,BF,ThumbMetacarpal_M13,matrix,m,number,42,"ThumbMetacarpal pose matrix M13, row-major. World translation component."
+Right_hand,BG,ThumbMetacarpal_M20,matrix,dimensionless,number,43,"ThumbMetacarpal pose matrix M20, row-major. Rotation component."
+Right_hand,BH,ThumbMetacarpal_M21,matrix,dimensionless,number,44,"ThumbMetacarpal pose matrix M21, row-major. Rotation component."
+Right_hand,BI,ThumbMetacarpal_M22,matrix,dimensionless,number,45,"ThumbMetacarpal pose matrix M22, row-major. Rotation component."
+Right_hand,BJ,ThumbMetacarpal_M23,matrix,m,number,46,"ThumbMetacarpal pose matrix M23, row-major. World translation component."
+Right_hand,BK,ThumbMetacarpal_M30,matrix,dimensionless,number,47,"ThumbMetacarpal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,BL,ThumbMetacarpal_M31,matrix,dimensionless,number,48,"ThumbMetacarpal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,BM,ThumbMetacarpal_M32,matrix,dimensionless,number,49,"ThumbMetacarpal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,BN,ThumbMetacarpal_M33,matrix,dimensionless,number,50,"ThumbMetacarpal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,BO,ThumbMetacarpal_x_m,position,m,number,38,ThumbMetacarpal world x position; duplicates the same joint's M03 value.
+Right_hand,BP,ThumbMetacarpal_y_m,position,m,number,42,ThumbMetacarpal world y position; duplicates the same joint's M13 value.
+Right_hand,BQ,ThumbMetacarpal_z_m,position,m,number,46,ThumbMetacarpal world z position; duplicates the same joint's M23 value.
+Right_hand,BR,ThumbMetacarpal_valid,quality,0 or 1,integer,421,Original ThumbMetacarpal valid flag. A 1 does not certify physical accuracy.
+Right_hand,BS,ThumbMetacarpal_tracked,quality,0 or 1,integer,447,Original ThumbMetacarpal tracked flag. A 1 does not certify physical accuracy.
+Right_hand,BT,ThumbProximal_M00,matrix,dimensionless,number,51,"ThumbProximal pose matrix M00, row-major. Rotation component."
+Right_hand,BU,ThumbProximal_M01,matrix,dimensionless,number,52,"ThumbProximal pose matrix M01, row-major. Rotation component."
+Right_hand,BV,ThumbProximal_M02,matrix,dimensionless,number,53,"ThumbProximal pose matrix M02, row-major. Rotation component."
+Right_hand,BW,ThumbProximal_M03,matrix,m,number,54,"ThumbProximal pose matrix M03, row-major. World translation component."
+Right_hand,BX,ThumbProximal_M10,matrix,dimensionless,number,55,"ThumbProximal pose matrix M10, row-major. Rotation component."
+Right_hand,BY,ThumbProximal_M11,matrix,dimensionless,number,56,"ThumbProximal pose matrix M11, row-major. Rotation component."
+Right_hand,BZ,ThumbProximal_M12,matrix,dimensionless,number,57,"ThumbProximal pose matrix M12, row-major. Rotation component."
+Right_hand,CA,ThumbProximal_M13,matrix,m,number,58,"ThumbProximal pose matrix M13, row-major. World translation component."
+Right_hand,CB,ThumbProximal_M20,matrix,dimensionless,number,59,"ThumbProximal pose matrix M20, row-major. Rotation component."
+Right_hand,CC,ThumbProximal_M21,matrix,dimensionless,number,60,"ThumbProximal pose matrix M21, row-major. Rotation component."
+Right_hand,CD,ThumbProximal_M22,matrix,dimensionless,number,61,"ThumbProximal pose matrix M22, row-major. Rotation component."
+Right_hand,CE,ThumbProximal_M23,matrix,m,number,62,"ThumbProximal pose matrix M23, row-major. World translation component."
+Right_hand,CF,ThumbProximal_M30,matrix,dimensionless,number,63,"ThumbProximal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,CG,ThumbProximal_M31,matrix,dimensionless,number,64,"ThumbProximal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,CH,ThumbProximal_M32,matrix,dimensionless,number,65,"ThumbProximal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,CI,ThumbProximal_M33,matrix,dimensionless,number,66,"ThumbProximal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,CJ,ThumbProximal_x_m,position,m,number,54,ThumbProximal world x position; duplicates the same joint's M03 value.
+Right_hand,CK,ThumbProximal_y_m,position,m,number,58,ThumbProximal world y position; duplicates the same joint's M13 value.
+Right_hand,CL,ThumbProximal_z_m,position,m,number,62,ThumbProximal world z position; duplicates the same joint's M23 value.
+Right_hand,CM,ThumbProximal_valid,quality,0 or 1,integer,422,Original ThumbProximal valid flag. A 1 does not certify physical accuracy.
+Right_hand,CN,ThumbProximal_tracked,quality,0 or 1,integer,448,Original ThumbProximal tracked flag. A 1 does not certify physical accuracy.
+Right_hand,CO,ThumbDistal_M00,matrix,dimensionless,number,67,"ThumbDistal pose matrix M00, row-major. Rotation component."
+Right_hand,CP,ThumbDistal_M01,matrix,dimensionless,number,68,"ThumbDistal pose matrix M01, row-major. Rotation component."
+Right_hand,CQ,ThumbDistal_M02,matrix,dimensionless,number,69,"ThumbDistal pose matrix M02, row-major. Rotation component."
+Right_hand,CR,ThumbDistal_M03,matrix,m,number,70,"ThumbDistal pose matrix M03, row-major. World translation component."
+Right_hand,CS,ThumbDistal_M10,matrix,dimensionless,number,71,"ThumbDistal pose matrix M10, row-major. Rotation component."
+Right_hand,CT,ThumbDistal_M11,matrix,dimensionless,number,72,"ThumbDistal pose matrix M11, row-major. Rotation component."
+Right_hand,CU,ThumbDistal_M12,matrix,dimensionless,number,73,"ThumbDistal pose matrix M12, row-major. Rotation component."
+Right_hand,CV,ThumbDistal_M13,matrix,m,number,74,"ThumbDistal pose matrix M13, row-major. World translation component."
+Right_hand,CW,ThumbDistal_M20,matrix,dimensionless,number,75,"ThumbDistal pose matrix M20, row-major. Rotation component."
+Right_hand,CX,ThumbDistal_M21,matrix,dimensionless,number,76,"ThumbDistal pose matrix M21, row-major. Rotation component."
+Right_hand,CY,ThumbDistal_M22,matrix,dimensionless,number,77,"ThumbDistal pose matrix M22, row-major. Rotation component."
+Right_hand,CZ,ThumbDistal_M23,matrix,m,number,78,"ThumbDistal pose matrix M23, row-major. World translation component."
+Right_hand,DA,ThumbDistal_M30,matrix,dimensionless,number,79,"ThumbDistal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,DB,ThumbDistal_M31,matrix,dimensionless,number,80,"ThumbDistal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,DC,ThumbDistal_M32,matrix,dimensionless,number,81,"ThumbDistal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,DD,ThumbDistal_M33,matrix,dimensionless,number,82,"ThumbDistal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,DE,ThumbDistal_x_m,position,m,number,70,ThumbDistal world x position; duplicates the same joint's M03 value.
+Right_hand,DF,ThumbDistal_y_m,position,m,number,74,ThumbDistal world y position; duplicates the same joint's M13 value.
+Right_hand,DG,ThumbDistal_z_m,position,m,number,78,ThumbDistal world z position; duplicates the same joint's M23 value.
+Right_hand,DH,ThumbDistal_valid,quality,0 or 1,integer,423,Original ThumbDistal valid flag. A 1 does not certify physical accuracy.
+Right_hand,DI,ThumbDistal_tracked,quality,0 or 1,integer,449,Original ThumbDistal tracked flag. A 1 does not certify physical accuracy.
+Right_hand,DJ,ThumbTip_M00,matrix,dimensionless,number,83,"ThumbTip pose matrix M00, row-major. Rotation component."
+Right_hand,DK,ThumbTip_M01,matrix,dimensionless,number,84,"ThumbTip pose matrix M01, row-major. Rotation component."
+Right_hand,DL,ThumbTip_M02,matrix,dimensionless,number,85,"ThumbTip pose matrix M02, row-major. Rotation component."
+Right_hand,DM,ThumbTip_M03,matrix,m,number,86,"ThumbTip pose matrix M03, row-major. World translation component."
+Right_hand,DN,ThumbTip_M10,matrix,dimensionless,number,87,"ThumbTip pose matrix M10, row-major. Rotation component."
+Right_hand,DO,ThumbTip_M11,matrix,dimensionless,number,88,"ThumbTip pose matrix M11, row-major. Rotation component."
+Right_hand,DP,ThumbTip_M12,matrix,dimensionless,number,89,"ThumbTip pose matrix M12, row-major. Rotation component."
+Right_hand,DQ,ThumbTip_M13,matrix,m,number,90,"ThumbTip pose matrix M13, row-major. World translation component."
+Right_hand,DR,ThumbTip_M20,matrix,dimensionless,number,91,"ThumbTip pose matrix M20, row-major. Rotation component."
+Right_hand,DS,ThumbTip_M21,matrix,dimensionless,number,92,"ThumbTip pose matrix M21, row-major. Rotation component."
+Right_hand,DT,ThumbTip_M22,matrix,dimensionless,number,93,"ThumbTip pose matrix M22, row-major. Rotation component."
+Right_hand,DU,ThumbTip_M23,matrix,m,number,94,"ThumbTip pose matrix M23, row-major. World translation component."
+Right_hand,DV,ThumbTip_M30,matrix,dimensionless,number,95,"ThumbTip pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,DW,ThumbTip_M31,matrix,dimensionless,number,96,"ThumbTip pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,DX,ThumbTip_M32,matrix,dimensionless,number,97,"ThumbTip pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,DY,ThumbTip_M33,matrix,dimensionless,number,98,"ThumbTip pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,DZ,ThumbTip_x_m,position,m,number,86,ThumbTip world x position; duplicates the same joint's M03 value.
+Right_hand,EA,ThumbTip_y_m,position,m,number,90,ThumbTip world y position; duplicates the same joint's M13 value.
+Right_hand,EB,ThumbTip_z_m,position,m,number,94,ThumbTip world z position; duplicates the same joint's M23 value.
+Right_hand,EC,ThumbTip_valid,quality,0 or 1,integer,424,Original ThumbTip valid flag. A 1 does not certify physical accuracy.
+Right_hand,ED,ThumbTip_tracked,quality,0 or 1,integer,450,Original ThumbTip tracked flag. A 1 does not certify physical accuracy.
+Right_hand,EE,IndexMetacarpal_M00,matrix,dimensionless,number,99,"IndexMetacarpal pose matrix M00, row-major. Rotation component."
+Right_hand,EF,IndexMetacarpal_M01,matrix,dimensionless,number,100,"IndexMetacarpal pose matrix M01, row-major. Rotation component."
+Right_hand,EG,IndexMetacarpal_M02,matrix,dimensionless,number,101,"IndexMetacarpal pose matrix M02, row-major. Rotation component."
+Right_hand,EH,IndexMetacarpal_M03,matrix,m,number,102,"IndexMetacarpal pose matrix M03, row-major. World translation component."
+Right_hand,EI,IndexMetacarpal_M10,matrix,dimensionless,number,103,"IndexMetacarpal pose matrix M10, row-major. Rotation component."
+Right_hand,EJ,IndexMetacarpal_M11,matrix,dimensionless,number,104,"IndexMetacarpal pose matrix M11, row-major. Rotation component."
+Right_hand,EK,IndexMetacarpal_M12,matrix,dimensionless,number,105,"IndexMetacarpal pose matrix M12, row-major. Rotation component."
+Right_hand,EL,IndexMetacarpal_M13,matrix,m,number,106,"IndexMetacarpal pose matrix M13, row-major. World translation component."
+Right_hand,EM,IndexMetacarpal_M20,matrix,dimensionless,number,107,"IndexMetacarpal pose matrix M20, row-major. Rotation component."
+Right_hand,EN,IndexMetacarpal_M21,matrix,dimensionless,number,108,"IndexMetacarpal pose matrix M21, row-major. Rotation component."
+Right_hand,EO,IndexMetacarpal_M22,matrix,dimensionless,number,109,"IndexMetacarpal pose matrix M22, row-major. Rotation component."
+Right_hand,EP,IndexMetacarpal_M23,matrix,m,number,110,"IndexMetacarpal pose matrix M23, row-major. World translation component."
+Right_hand,EQ,IndexMetacarpal_M30,matrix,dimensionless,number,111,"IndexMetacarpal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,ER,IndexMetacarpal_M31,matrix,dimensionless,number,112,"IndexMetacarpal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,ES,IndexMetacarpal_M32,matrix,dimensionless,number,113,"IndexMetacarpal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,ET,IndexMetacarpal_M33,matrix,dimensionless,number,114,"IndexMetacarpal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,EU,IndexMetacarpal_x_m,position,m,number,102,IndexMetacarpal world x position; duplicates the same joint's M03 value.
+Right_hand,EV,IndexMetacarpal_y_m,position,m,number,106,IndexMetacarpal world y position; duplicates the same joint's M13 value.
+Right_hand,EW,IndexMetacarpal_z_m,position,m,number,110,IndexMetacarpal world z position; duplicates the same joint's M23 value.
+Right_hand,EX,IndexMetacarpal_valid,quality,0 or 1,integer,425,Original IndexMetacarpal valid flag. A 1 does not certify physical accuracy.
+Right_hand,EY,IndexMetacarpal_tracked,quality,0 or 1,integer,451,Original IndexMetacarpal tracked flag. A 1 does not certify physical accuracy.
+Right_hand,EZ,IndexProximal_M00,matrix,dimensionless,number,115,"IndexProximal pose matrix M00, row-major. Rotation component."
+Right_hand,FA,IndexProximal_M01,matrix,dimensionless,number,116,"IndexProximal pose matrix M01, row-major. Rotation component."
+Right_hand,FB,IndexProximal_M02,matrix,dimensionless,number,117,"IndexProximal pose matrix M02, row-major. Rotation component."
+Right_hand,FC,IndexProximal_M03,matrix,m,number,118,"IndexProximal pose matrix M03, row-major. World translation component."
+Right_hand,FD,IndexProximal_M10,matrix,dimensionless,number,119,"IndexProximal pose matrix M10, row-major. Rotation component."
+Right_hand,FE,IndexProximal_M11,matrix,dimensionless,number,120,"IndexProximal pose matrix M11, row-major. Rotation component."
+Right_hand,FF,IndexProximal_M12,matrix,dimensionless,number,121,"IndexProximal pose matrix M12, row-major. Rotation component."
+Right_hand,FG,IndexProximal_M13,matrix,m,number,122,"IndexProximal pose matrix M13, row-major. World translation component."
+Right_hand,FH,IndexProximal_M20,matrix,dimensionless,number,123,"IndexProximal pose matrix M20, row-major. Rotation component."
+Right_hand,FI,IndexProximal_M21,matrix,dimensionless,number,124,"IndexProximal pose matrix M21, row-major. Rotation component."
+Right_hand,FJ,IndexProximal_M22,matrix,dimensionless,number,125,"IndexProximal pose matrix M22, row-major. Rotation component."
+Right_hand,FK,IndexProximal_M23,matrix,m,number,126,"IndexProximal pose matrix M23, row-major. World translation component."
+Right_hand,FL,IndexProximal_M30,matrix,dimensionless,number,127,"IndexProximal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,FM,IndexProximal_M31,matrix,dimensionless,number,128,"IndexProximal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,FN,IndexProximal_M32,matrix,dimensionless,number,129,"IndexProximal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,FO,IndexProximal_M33,matrix,dimensionless,number,130,"IndexProximal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,FP,IndexProximal_x_m,position,m,number,118,IndexProximal world x position; duplicates the same joint's M03 value.
+Right_hand,FQ,IndexProximal_y_m,position,m,number,122,IndexProximal world y position; duplicates the same joint's M13 value.
+Right_hand,FR,IndexProximal_z_m,position,m,number,126,IndexProximal world z position; duplicates the same joint's M23 value.
+Right_hand,FS,IndexProximal_valid,quality,0 or 1,integer,426,Original IndexProximal valid flag. A 1 does not certify physical accuracy.
+Right_hand,FT,IndexProximal_tracked,quality,0 or 1,integer,452,Original IndexProximal tracked flag. A 1 does not certify physical accuracy.
+Right_hand,FU,IndexIntermediate_M00,matrix,dimensionless,number,131,"IndexIntermediate pose matrix M00, row-major. Rotation component."
+Right_hand,FV,IndexIntermediate_M01,matrix,dimensionless,number,132,"IndexIntermediate pose matrix M01, row-major. Rotation component."
+Right_hand,FW,IndexIntermediate_M02,matrix,dimensionless,number,133,"IndexIntermediate pose matrix M02, row-major. Rotation component."
+Right_hand,FX,IndexIntermediate_M03,matrix,m,number,134,"IndexIntermediate pose matrix M03, row-major. World translation component."
+Right_hand,FY,IndexIntermediate_M10,matrix,dimensionless,number,135,"IndexIntermediate pose matrix M10, row-major. Rotation component."
+Right_hand,FZ,IndexIntermediate_M11,matrix,dimensionless,number,136,"IndexIntermediate pose matrix M11, row-major. Rotation component."
+Right_hand,GA,IndexIntermediate_M12,matrix,dimensionless,number,137,"IndexIntermediate pose matrix M12, row-major. Rotation component."
+Right_hand,GB,IndexIntermediate_M13,matrix,m,number,138,"IndexIntermediate pose matrix M13, row-major. World translation component."
+Right_hand,GC,IndexIntermediate_M20,matrix,dimensionless,number,139,"IndexIntermediate pose matrix M20, row-major. Rotation component."
+Right_hand,GD,IndexIntermediate_M21,matrix,dimensionless,number,140,"IndexIntermediate pose matrix M21, row-major. Rotation component."
+Right_hand,GE,IndexIntermediate_M22,matrix,dimensionless,number,141,"IndexIntermediate pose matrix M22, row-major. Rotation component."
+Right_hand,GF,IndexIntermediate_M23,matrix,m,number,142,"IndexIntermediate pose matrix M23, row-major. World translation component."
+Right_hand,GG,IndexIntermediate_M30,matrix,dimensionless,number,143,"IndexIntermediate pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,GH,IndexIntermediate_M31,matrix,dimensionless,number,144,"IndexIntermediate pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,GI,IndexIntermediate_M32,matrix,dimensionless,number,145,"IndexIntermediate pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,GJ,IndexIntermediate_M33,matrix,dimensionless,number,146,"IndexIntermediate pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,GK,IndexIntermediate_x_m,position,m,number,134,IndexIntermediate world x position; duplicates the same joint's M03 value.
+Right_hand,GL,IndexIntermediate_y_m,position,m,number,138,IndexIntermediate world y position; duplicates the same joint's M13 value.
+Right_hand,GM,IndexIntermediate_z_m,position,m,number,142,IndexIntermediate world z position; duplicates the same joint's M23 value.
+Right_hand,GN,IndexIntermediate_valid,quality,0 or 1,integer,427,Original IndexIntermediate valid flag. A 1 does not certify physical accuracy.
+Right_hand,GO,IndexIntermediate_tracked,quality,0 or 1,integer,453,Original IndexIntermediate tracked flag. A 1 does not certify physical accuracy.
+Right_hand,GP,IndexDistal_M00,matrix,dimensionless,number,147,"IndexDistal pose matrix M00, row-major. Rotation component."
+Right_hand,GQ,IndexDistal_M01,matrix,dimensionless,number,148,"IndexDistal pose matrix M01, row-major. Rotation component."
+Right_hand,GR,IndexDistal_M02,matrix,dimensionless,number,149,"IndexDistal pose matrix M02, row-major. Rotation component."
+Right_hand,GS,IndexDistal_M03,matrix,m,number,150,"IndexDistal pose matrix M03, row-major. World translation component."
+Right_hand,GT,IndexDistal_M10,matrix,dimensionless,number,151,"IndexDistal pose matrix M10, row-major. Rotation component."
+Right_hand,GU,IndexDistal_M11,matrix,dimensionless,number,152,"IndexDistal pose matrix M11, row-major. Rotation component."
+Right_hand,GV,IndexDistal_M12,matrix,dimensionless,number,153,"IndexDistal pose matrix M12, row-major. Rotation component."
+Right_hand,GW,IndexDistal_M13,matrix,m,number,154,"IndexDistal pose matrix M13, row-major. World translation component."
+Right_hand,GX,IndexDistal_M20,matrix,dimensionless,number,155,"IndexDistal pose matrix M20, row-major. Rotation component."
+Right_hand,GY,IndexDistal_M21,matrix,dimensionless,number,156,"IndexDistal pose matrix M21, row-major. Rotation component."
+Right_hand,GZ,IndexDistal_M22,matrix,dimensionless,number,157,"IndexDistal pose matrix M22, row-major. Rotation component."
+Right_hand,HA,IndexDistal_M23,matrix,m,number,158,"IndexDistal pose matrix M23, row-major. World translation component."
+Right_hand,HB,IndexDistal_M30,matrix,dimensionless,number,159,"IndexDistal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,HC,IndexDistal_M31,matrix,dimensionless,number,160,"IndexDistal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,HD,IndexDistal_M32,matrix,dimensionless,number,161,"IndexDistal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,HE,IndexDistal_M33,matrix,dimensionless,number,162,"IndexDistal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,HF,IndexDistal_x_m,position,m,number,150,IndexDistal world x position; duplicates the same joint's M03 value.
+Right_hand,HG,IndexDistal_y_m,position,m,number,154,IndexDistal world y position; duplicates the same joint's M13 value.
+Right_hand,HH,IndexDistal_z_m,position,m,number,158,IndexDistal world z position; duplicates the same joint's M23 value.
+Right_hand,HI,IndexDistal_valid,quality,0 or 1,integer,428,Original IndexDistal valid flag. A 1 does not certify physical accuracy.
+Right_hand,HJ,IndexDistal_tracked,quality,0 or 1,integer,454,Original IndexDistal tracked flag. A 1 does not certify physical accuracy.
+Right_hand,HK,IndexTip_M00,matrix,dimensionless,number,163,"IndexTip pose matrix M00, row-major. Rotation component."
+Right_hand,HL,IndexTip_M01,matrix,dimensionless,number,164,"IndexTip pose matrix M01, row-major. Rotation component."
+Right_hand,HM,IndexTip_M02,matrix,dimensionless,number,165,"IndexTip pose matrix M02, row-major. Rotation component."
+Right_hand,HN,IndexTip_M03,matrix,m,number,166,"IndexTip pose matrix M03, row-major. World translation component."
+Right_hand,HO,IndexTip_M10,matrix,dimensionless,number,167,"IndexTip pose matrix M10, row-major. Rotation component."
+Right_hand,HP,IndexTip_M11,matrix,dimensionless,number,168,"IndexTip pose matrix M11, row-major. Rotation component."
+Right_hand,HQ,IndexTip_M12,matrix,dimensionless,number,169,"IndexTip pose matrix M12, row-major. Rotation component."
+Right_hand,HR,IndexTip_M13,matrix,m,number,170,"IndexTip pose matrix M13, row-major. World translation component."
+Right_hand,HS,IndexTip_M20,matrix,dimensionless,number,171,"IndexTip pose matrix M20, row-major. Rotation component."
+Right_hand,HT,IndexTip_M21,matrix,dimensionless,number,172,"IndexTip pose matrix M21, row-major. Rotation component."
+Right_hand,HU,IndexTip_M22,matrix,dimensionless,number,173,"IndexTip pose matrix M22, row-major. Rotation component."
+Right_hand,HV,IndexTip_M23,matrix,m,number,174,"IndexTip pose matrix M23, row-major. World translation component."
+Right_hand,HW,IndexTip_M30,matrix,dimensionless,number,175,"IndexTip pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,HX,IndexTip_M31,matrix,dimensionless,number,176,"IndexTip pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,HY,IndexTip_M32,matrix,dimensionless,number,177,"IndexTip pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,HZ,IndexTip_M33,matrix,dimensionless,number,178,"IndexTip pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,IA,IndexTip_x_m,position,m,number,166,IndexTip world x position; duplicates the same joint's M03 value.
+Right_hand,IB,IndexTip_y_m,position,m,number,170,IndexTip world y position; duplicates the same joint's M13 value.
+Right_hand,IC,IndexTip_z_m,position,m,number,174,IndexTip world z position; duplicates the same joint's M23 value.
+Right_hand,ID,IndexTip_valid,quality,0 or 1,integer,429,Original IndexTip valid flag. A 1 does not certify physical accuracy.
+Right_hand,IE,IndexTip_tracked,quality,0 or 1,integer,455,Original IndexTip tracked flag. A 1 does not certify physical accuracy.
+Right_hand,IF,MiddleMetacarpal_M00,matrix,dimensionless,number,179,"MiddleMetacarpal pose matrix M00, row-major. Rotation component."
+Right_hand,IG,MiddleMetacarpal_M01,matrix,dimensionless,number,180,"MiddleMetacarpal pose matrix M01, row-major. Rotation component."
+Right_hand,IH,MiddleMetacarpal_M02,matrix,dimensionless,number,181,"MiddleMetacarpal pose matrix M02, row-major. Rotation component."
+Right_hand,II,MiddleMetacarpal_M03,matrix,m,number,182,"MiddleMetacarpal pose matrix M03, row-major. World translation component."
+Right_hand,IJ,MiddleMetacarpal_M10,matrix,dimensionless,number,183,"MiddleMetacarpal pose matrix M10, row-major. Rotation component."
+Right_hand,IK,MiddleMetacarpal_M11,matrix,dimensionless,number,184,"MiddleMetacarpal pose matrix M11, row-major. Rotation component."
+Right_hand,IL,MiddleMetacarpal_M12,matrix,dimensionless,number,185,"MiddleMetacarpal pose matrix M12, row-major. Rotation component."
+Right_hand,IM,MiddleMetacarpal_M13,matrix,m,number,186,"MiddleMetacarpal pose matrix M13, row-major. World translation component."
+Right_hand,IN,MiddleMetacarpal_M20,matrix,dimensionless,number,187,"MiddleMetacarpal pose matrix M20, row-major. Rotation component."
+Right_hand,IO,MiddleMetacarpal_M21,matrix,dimensionless,number,188,"MiddleMetacarpal pose matrix M21, row-major. Rotation component."
+Right_hand,IP,MiddleMetacarpal_M22,matrix,dimensionless,number,189,"MiddleMetacarpal pose matrix M22, row-major. Rotation component."
+Right_hand,IQ,MiddleMetacarpal_M23,matrix,m,number,190,"MiddleMetacarpal pose matrix M23, row-major. World translation component."
+Right_hand,IR,MiddleMetacarpal_M30,matrix,dimensionless,number,191,"MiddleMetacarpal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,IS,MiddleMetacarpal_M31,matrix,dimensionless,number,192,"MiddleMetacarpal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,IT,MiddleMetacarpal_M32,matrix,dimensionless,number,193,"MiddleMetacarpal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,IU,MiddleMetacarpal_M33,matrix,dimensionless,number,194,"MiddleMetacarpal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,IV,MiddleMetacarpal_x_m,position,m,number,182,MiddleMetacarpal world x position; duplicates the same joint's M03 value.
+Right_hand,IW,MiddleMetacarpal_y_m,position,m,number,186,MiddleMetacarpal world y position; duplicates the same joint's M13 value.
+Right_hand,IX,MiddleMetacarpal_z_m,position,m,number,190,MiddleMetacarpal world z position; duplicates the same joint's M23 value.
+Right_hand,IY,MiddleMetacarpal_valid,quality,0 or 1,integer,430,Original MiddleMetacarpal valid flag. A 1 does not certify physical accuracy.
+Right_hand,IZ,MiddleMetacarpal_tracked,quality,0 or 1,integer,456,Original MiddleMetacarpal tracked flag. A 1 does not certify physical accuracy.
+Right_hand,JA,MiddleProximal_M00,matrix,dimensionless,number,195,"MiddleProximal pose matrix M00, row-major. Rotation component."
+Right_hand,JB,MiddleProximal_M01,matrix,dimensionless,number,196,"MiddleProximal pose matrix M01, row-major. Rotation component."
+Right_hand,JC,MiddleProximal_M02,matrix,dimensionless,number,197,"MiddleProximal pose matrix M02, row-major. Rotation component."
+Right_hand,JD,MiddleProximal_M03,matrix,m,number,198,"MiddleProximal pose matrix M03, row-major. World translation component."
+Right_hand,JE,MiddleProximal_M10,matrix,dimensionless,number,199,"MiddleProximal pose matrix M10, row-major. Rotation component."
+Right_hand,JF,MiddleProximal_M11,matrix,dimensionless,number,200,"MiddleProximal pose matrix M11, row-major. Rotation component."
+Right_hand,JG,MiddleProximal_M12,matrix,dimensionless,number,201,"MiddleProximal pose matrix M12, row-major. Rotation component."
+Right_hand,JH,MiddleProximal_M13,matrix,m,number,202,"MiddleProximal pose matrix M13, row-major. World translation component."
+Right_hand,JI,MiddleProximal_M20,matrix,dimensionless,number,203,"MiddleProximal pose matrix M20, row-major. Rotation component."
+Right_hand,JJ,MiddleProximal_M21,matrix,dimensionless,number,204,"MiddleProximal pose matrix M21, row-major. Rotation component."
+Right_hand,JK,MiddleProximal_M22,matrix,dimensionless,number,205,"MiddleProximal pose matrix M22, row-major. Rotation component."
+Right_hand,JL,MiddleProximal_M23,matrix,m,number,206,"MiddleProximal pose matrix M23, row-major. World translation component."
+Right_hand,JM,MiddleProximal_M30,matrix,dimensionless,number,207,"MiddleProximal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,JN,MiddleProximal_M31,matrix,dimensionless,number,208,"MiddleProximal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,JO,MiddleProximal_M32,matrix,dimensionless,number,209,"MiddleProximal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,JP,MiddleProximal_M33,matrix,dimensionless,number,210,"MiddleProximal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,JQ,MiddleProximal_x_m,position,m,number,198,MiddleProximal world x position; duplicates the same joint's M03 value.
+Right_hand,JR,MiddleProximal_y_m,position,m,number,202,MiddleProximal world y position; duplicates the same joint's M13 value.
+Right_hand,JS,MiddleProximal_z_m,position,m,number,206,MiddleProximal world z position; duplicates the same joint's M23 value.
+Right_hand,JT,MiddleProximal_valid,quality,0 or 1,integer,431,Original MiddleProximal valid flag. A 1 does not certify physical accuracy.
+Right_hand,JU,MiddleProximal_tracked,quality,0 or 1,integer,457,Original MiddleProximal tracked flag. A 1 does not certify physical accuracy.
+Right_hand,JV,MiddleIntermediate_M00,matrix,dimensionless,number,211,"MiddleIntermediate pose matrix M00, row-major. Rotation component."
+Right_hand,JW,MiddleIntermediate_M01,matrix,dimensionless,number,212,"MiddleIntermediate pose matrix M01, row-major. Rotation component."
+Right_hand,JX,MiddleIntermediate_M02,matrix,dimensionless,number,213,"MiddleIntermediate pose matrix M02, row-major. Rotation component."
+Right_hand,JY,MiddleIntermediate_M03,matrix,m,number,214,"MiddleIntermediate pose matrix M03, row-major. World translation component."
+Right_hand,JZ,MiddleIntermediate_M10,matrix,dimensionless,number,215,"MiddleIntermediate pose matrix M10, row-major. Rotation component."
+Right_hand,KA,MiddleIntermediate_M11,matrix,dimensionless,number,216,"MiddleIntermediate pose matrix M11, row-major. Rotation component."
+Right_hand,KB,MiddleIntermediate_M12,matrix,dimensionless,number,217,"MiddleIntermediate pose matrix M12, row-major. Rotation component."
+Right_hand,KC,MiddleIntermediate_M13,matrix,m,number,218,"MiddleIntermediate pose matrix M13, row-major. World translation component."
+Right_hand,KD,MiddleIntermediate_M20,matrix,dimensionless,number,219,"MiddleIntermediate pose matrix M20, row-major. Rotation component."
+Right_hand,KE,MiddleIntermediate_M21,matrix,dimensionless,number,220,"MiddleIntermediate pose matrix M21, row-major. Rotation component."
+Right_hand,KF,MiddleIntermediate_M22,matrix,dimensionless,number,221,"MiddleIntermediate pose matrix M22, row-major. Rotation component."
+Right_hand,KG,MiddleIntermediate_M23,matrix,m,number,222,"MiddleIntermediate pose matrix M23, row-major. World translation component."
+Right_hand,KH,MiddleIntermediate_M30,matrix,dimensionless,number,223,"MiddleIntermediate pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,KI,MiddleIntermediate_M31,matrix,dimensionless,number,224,"MiddleIntermediate pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,KJ,MiddleIntermediate_M32,matrix,dimensionless,number,225,"MiddleIntermediate pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,KK,MiddleIntermediate_M33,matrix,dimensionless,number,226,"MiddleIntermediate pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,KL,MiddleIntermediate_x_m,position,m,number,214,MiddleIntermediate world x position; duplicates the same joint's M03 value.
+Right_hand,KM,MiddleIntermediate_y_m,position,m,number,218,MiddleIntermediate world y position; duplicates the same joint's M13 value.
+Right_hand,KN,MiddleIntermediate_z_m,position,m,number,222,MiddleIntermediate world z position; duplicates the same joint's M23 value.
+Right_hand,KO,MiddleIntermediate_valid,quality,0 or 1,integer,432,Original MiddleIntermediate valid flag. A 1 does not certify physical accuracy.
+Right_hand,KP,MiddleIntermediate_tracked,quality,0 or 1,integer,458,Original MiddleIntermediate tracked flag. A 1 does not certify physical accuracy.
+Right_hand,KQ,MiddleDistal_M00,matrix,dimensionless,number,227,"MiddleDistal pose matrix M00, row-major. Rotation component."
+Right_hand,KR,MiddleDistal_M01,matrix,dimensionless,number,228,"MiddleDistal pose matrix M01, row-major. Rotation component."
+Right_hand,KS,MiddleDistal_M02,matrix,dimensionless,number,229,"MiddleDistal pose matrix M02, row-major. Rotation component."
+Right_hand,KT,MiddleDistal_M03,matrix,m,number,230,"MiddleDistal pose matrix M03, row-major. World translation component."
+Right_hand,KU,MiddleDistal_M10,matrix,dimensionless,number,231,"MiddleDistal pose matrix M10, row-major. Rotation component."
+Right_hand,KV,MiddleDistal_M11,matrix,dimensionless,number,232,"MiddleDistal pose matrix M11, row-major. Rotation component."
+Right_hand,KW,MiddleDistal_M12,matrix,dimensionless,number,233,"MiddleDistal pose matrix M12, row-major. Rotation component."
+Right_hand,KX,MiddleDistal_M13,matrix,m,number,234,"MiddleDistal pose matrix M13, row-major. World translation component."
+Right_hand,KY,MiddleDistal_M20,matrix,dimensionless,number,235,"MiddleDistal pose matrix M20, row-major. Rotation component."
+Right_hand,KZ,MiddleDistal_M21,matrix,dimensionless,number,236,"MiddleDistal pose matrix M21, row-major. Rotation component."
+Right_hand,LA,MiddleDistal_M22,matrix,dimensionless,number,237,"MiddleDistal pose matrix M22, row-major. Rotation component."
+Right_hand,LB,MiddleDistal_M23,matrix,m,number,238,"MiddleDistal pose matrix M23, row-major. World translation component."
+Right_hand,LC,MiddleDistal_M30,matrix,dimensionless,number,239,"MiddleDistal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,LD,MiddleDistal_M31,matrix,dimensionless,number,240,"MiddleDistal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,LE,MiddleDistal_M32,matrix,dimensionless,number,241,"MiddleDistal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,LF,MiddleDistal_M33,matrix,dimensionless,number,242,"MiddleDistal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,LG,MiddleDistal_x_m,position,m,number,230,MiddleDistal world x position; duplicates the same joint's M03 value.
+Right_hand,LH,MiddleDistal_y_m,position,m,number,234,MiddleDistal world y position; duplicates the same joint's M13 value.
+Right_hand,LI,MiddleDistal_z_m,position,m,number,238,MiddleDistal world z position; duplicates the same joint's M23 value.
+Right_hand,LJ,MiddleDistal_valid,quality,0 or 1,integer,433,Original MiddleDistal valid flag. A 1 does not certify physical accuracy.
+Right_hand,LK,MiddleDistal_tracked,quality,0 or 1,integer,459,Original MiddleDistal tracked flag. A 1 does not certify physical accuracy.
+Right_hand,LL,MiddleTip_M00,matrix,dimensionless,number,243,"MiddleTip pose matrix M00, row-major. Rotation component."
+Right_hand,LM,MiddleTip_M01,matrix,dimensionless,number,244,"MiddleTip pose matrix M01, row-major. Rotation component."
+Right_hand,LN,MiddleTip_M02,matrix,dimensionless,number,245,"MiddleTip pose matrix M02, row-major. Rotation component."
+Right_hand,LO,MiddleTip_M03,matrix,m,number,246,"MiddleTip pose matrix M03, row-major. World translation component."
+Right_hand,LP,MiddleTip_M10,matrix,dimensionless,number,247,"MiddleTip pose matrix M10, row-major. Rotation component."
+Right_hand,LQ,MiddleTip_M11,matrix,dimensionless,number,248,"MiddleTip pose matrix M11, row-major. Rotation component."
+Right_hand,LR,MiddleTip_M12,matrix,dimensionless,number,249,"MiddleTip pose matrix M12, row-major. Rotation component."
+Right_hand,LS,MiddleTip_M13,matrix,m,number,250,"MiddleTip pose matrix M13, row-major. World translation component."
+Right_hand,LT,MiddleTip_M20,matrix,dimensionless,number,251,"MiddleTip pose matrix M20, row-major. Rotation component."
+Right_hand,LU,MiddleTip_M21,matrix,dimensionless,number,252,"MiddleTip pose matrix M21, row-major. Rotation component."
+Right_hand,LV,MiddleTip_M22,matrix,dimensionless,number,253,"MiddleTip pose matrix M22, row-major. Rotation component."
+Right_hand,LW,MiddleTip_M23,matrix,m,number,254,"MiddleTip pose matrix M23, row-major. World translation component."
+Right_hand,LX,MiddleTip_M30,matrix,dimensionless,number,255,"MiddleTip pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,LY,MiddleTip_M31,matrix,dimensionless,number,256,"MiddleTip pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,LZ,MiddleTip_M32,matrix,dimensionless,number,257,"MiddleTip pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,MA,MiddleTip_M33,matrix,dimensionless,number,258,"MiddleTip pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,MB,MiddleTip_x_m,position,m,number,246,MiddleTip world x position; duplicates the same joint's M03 value.
+Right_hand,MC,MiddleTip_y_m,position,m,number,250,MiddleTip world y position; duplicates the same joint's M13 value.
+Right_hand,MD,MiddleTip_z_m,position,m,number,254,MiddleTip world z position; duplicates the same joint's M23 value.
+Right_hand,ME,MiddleTip_valid,quality,0 or 1,integer,434,Original MiddleTip valid flag. A 1 does not certify physical accuracy.
+Right_hand,MF,MiddleTip_tracked,quality,0 or 1,integer,460,Original MiddleTip tracked flag. A 1 does not certify physical accuracy.
+Right_hand,MG,RingMetacarpal_M00,matrix,dimensionless,number,259,"RingMetacarpal pose matrix M00, row-major. Rotation component."
+Right_hand,MH,RingMetacarpal_M01,matrix,dimensionless,number,260,"RingMetacarpal pose matrix M01, row-major. Rotation component."
+Right_hand,MI,RingMetacarpal_M02,matrix,dimensionless,number,261,"RingMetacarpal pose matrix M02, row-major. Rotation component."
+Right_hand,MJ,RingMetacarpal_M03,matrix,m,number,262,"RingMetacarpal pose matrix M03, row-major. World translation component."
+Right_hand,MK,RingMetacarpal_M10,matrix,dimensionless,number,263,"RingMetacarpal pose matrix M10, row-major. Rotation component."
+Right_hand,ML,RingMetacarpal_M11,matrix,dimensionless,number,264,"RingMetacarpal pose matrix M11, row-major. Rotation component."
+Right_hand,MM,RingMetacarpal_M12,matrix,dimensionless,number,265,"RingMetacarpal pose matrix M12, row-major. Rotation component."
+Right_hand,MN,RingMetacarpal_M13,matrix,m,number,266,"RingMetacarpal pose matrix M13, row-major. World translation component."
+Right_hand,MO,RingMetacarpal_M20,matrix,dimensionless,number,267,"RingMetacarpal pose matrix M20, row-major. Rotation component."
+Right_hand,MP,RingMetacarpal_M21,matrix,dimensionless,number,268,"RingMetacarpal pose matrix M21, row-major. Rotation component."
+Right_hand,MQ,RingMetacarpal_M22,matrix,dimensionless,number,269,"RingMetacarpal pose matrix M22, row-major. Rotation component."
+Right_hand,MR,RingMetacarpal_M23,matrix,m,number,270,"RingMetacarpal pose matrix M23, row-major. World translation component."
+Right_hand,MS,RingMetacarpal_M30,matrix,dimensionless,number,271,"RingMetacarpal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,MT,RingMetacarpal_M31,matrix,dimensionless,number,272,"RingMetacarpal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,MU,RingMetacarpal_M32,matrix,dimensionless,number,273,"RingMetacarpal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,MV,RingMetacarpal_M33,matrix,dimensionless,number,274,"RingMetacarpal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,MW,RingMetacarpal_x_m,position,m,number,262,RingMetacarpal world x position; duplicates the same joint's M03 value.
+Right_hand,MX,RingMetacarpal_y_m,position,m,number,266,RingMetacarpal world y position; duplicates the same joint's M13 value.
+Right_hand,MY,RingMetacarpal_z_m,position,m,number,270,RingMetacarpal world z position; duplicates the same joint's M23 value.
+Right_hand,MZ,RingMetacarpal_valid,quality,0 or 1,integer,435,Original RingMetacarpal valid flag. A 1 does not certify physical accuracy.
+Right_hand,NA,RingMetacarpal_tracked,quality,0 or 1,integer,461,Original RingMetacarpal tracked flag. A 1 does not certify physical accuracy.
+Right_hand,NB,RingProximal_M00,matrix,dimensionless,number,275,"RingProximal pose matrix M00, row-major. Rotation component."
+Right_hand,NC,RingProximal_M01,matrix,dimensionless,number,276,"RingProximal pose matrix M01, row-major. Rotation component."
+Right_hand,ND,RingProximal_M02,matrix,dimensionless,number,277,"RingProximal pose matrix M02, row-major. Rotation component."
+Right_hand,NE,RingProximal_M03,matrix,m,number,278,"RingProximal pose matrix M03, row-major. World translation component."
+Right_hand,NF,RingProximal_M10,matrix,dimensionless,number,279,"RingProximal pose matrix M10, row-major. Rotation component."
+Right_hand,NG,RingProximal_M11,matrix,dimensionless,number,280,"RingProximal pose matrix M11, row-major. Rotation component."
+Right_hand,NH,RingProximal_M12,matrix,dimensionless,number,281,"RingProximal pose matrix M12, row-major. Rotation component."
+Right_hand,NI,RingProximal_M13,matrix,m,number,282,"RingProximal pose matrix M13, row-major. World translation component."
+Right_hand,NJ,RingProximal_M20,matrix,dimensionless,number,283,"RingProximal pose matrix M20, row-major. Rotation component."
+Right_hand,NK,RingProximal_M21,matrix,dimensionless,number,284,"RingProximal pose matrix M21, row-major. Rotation component."
+Right_hand,NL,RingProximal_M22,matrix,dimensionless,number,285,"RingProximal pose matrix M22, row-major. Rotation component."
+Right_hand,NM,RingProximal_M23,matrix,m,number,286,"RingProximal pose matrix M23, row-major. World translation component."
+Right_hand,NN,RingProximal_M30,matrix,dimensionless,number,287,"RingProximal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,NO,RingProximal_M31,matrix,dimensionless,number,288,"RingProximal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,NP,RingProximal_M32,matrix,dimensionless,number,289,"RingProximal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,NQ,RingProximal_M33,matrix,dimensionless,number,290,"RingProximal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,NR,RingProximal_x_m,position,m,number,278,RingProximal world x position; duplicates the same joint's M03 value.
+Right_hand,NS,RingProximal_y_m,position,m,number,282,RingProximal world y position; duplicates the same joint's M13 value.
+Right_hand,NT,RingProximal_z_m,position,m,number,286,RingProximal world z position; duplicates the same joint's M23 value.
+Right_hand,NU,RingProximal_valid,quality,0 or 1,integer,436,Original RingProximal valid flag. A 1 does not certify physical accuracy.
+Right_hand,NV,RingProximal_tracked,quality,0 or 1,integer,462,Original RingProximal tracked flag. A 1 does not certify physical accuracy.
+Right_hand,NW,RingIntermediate_M00,matrix,dimensionless,number,291,"RingIntermediate pose matrix M00, row-major. Rotation component."
+Right_hand,NX,RingIntermediate_M01,matrix,dimensionless,number,292,"RingIntermediate pose matrix M01, row-major. Rotation component."
+Right_hand,NY,RingIntermediate_M02,matrix,dimensionless,number,293,"RingIntermediate pose matrix M02, row-major. Rotation component."
+Right_hand,NZ,RingIntermediate_M03,matrix,m,number,294,"RingIntermediate pose matrix M03, row-major. World translation component."
+Right_hand,OA,RingIntermediate_M10,matrix,dimensionless,number,295,"RingIntermediate pose matrix M10, row-major. Rotation component."
+Right_hand,OB,RingIntermediate_M11,matrix,dimensionless,number,296,"RingIntermediate pose matrix M11, row-major. Rotation component."
+Right_hand,OC,RingIntermediate_M12,matrix,dimensionless,number,297,"RingIntermediate pose matrix M12, row-major. Rotation component."
+Right_hand,OD,RingIntermediate_M13,matrix,m,number,298,"RingIntermediate pose matrix M13, row-major. World translation component."
+Right_hand,OE,RingIntermediate_M20,matrix,dimensionless,number,299,"RingIntermediate pose matrix M20, row-major. Rotation component."
+Right_hand,OF,RingIntermediate_M21,matrix,dimensionless,number,300,"RingIntermediate pose matrix M21, row-major. Rotation component."
+Right_hand,OG,RingIntermediate_M22,matrix,dimensionless,number,301,"RingIntermediate pose matrix M22, row-major. Rotation component."
+Right_hand,OH,RingIntermediate_M23,matrix,m,number,302,"RingIntermediate pose matrix M23, row-major. World translation component."
+Right_hand,OI,RingIntermediate_M30,matrix,dimensionless,number,303,"RingIntermediate pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,OJ,RingIntermediate_M31,matrix,dimensionless,number,304,"RingIntermediate pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,OK,RingIntermediate_M32,matrix,dimensionless,number,305,"RingIntermediate pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,OL,RingIntermediate_M33,matrix,dimensionless,number,306,"RingIntermediate pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,OM,RingIntermediate_x_m,position,m,number,294,RingIntermediate world x position; duplicates the same joint's M03 value.
+Right_hand,ON,RingIntermediate_y_m,position,m,number,298,RingIntermediate world y position; duplicates the same joint's M13 value.
+Right_hand,OO,RingIntermediate_z_m,position,m,number,302,RingIntermediate world z position; duplicates the same joint's M23 value.
+Right_hand,OP,RingIntermediate_valid,quality,0 or 1,integer,437,Original RingIntermediate valid flag. A 1 does not certify physical accuracy.
+Right_hand,OQ,RingIntermediate_tracked,quality,0 or 1,integer,463,Original RingIntermediate tracked flag. A 1 does not certify physical accuracy.
+Right_hand,OR,RingDistal_M00,matrix,dimensionless,number,307,"RingDistal pose matrix M00, row-major. Rotation component."
+Right_hand,OS,RingDistal_M01,matrix,dimensionless,number,308,"RingDistal pose matrix M01, row-major. Rotation component."
+Right_hand,OT,RingDistal_M02,matrix,dimensionless,number,309,"RingDistal pose matrix M02, row-major. Rotation component."
+Right_hand,OU,RingDistal_M03,matrix,m,number,310,"RingDistal pose matrix M03, row-major. World translation component."
+Right_hand,OV,RingDistal_M10,matrix,dimensionless,number,311,"RingDistal pose matrix M10, row-major. Rotation component."
+Right_hand,OW,RingDistal_M11,matrix,dimensionless,number,312,"RingDistal pose matrix M11, row-major. Rotation component."
+Right_hand,OX,RingDistal_M12,matrix,dimensionless,number,313,"RingDistal pose matrix M12, row-major. Rotation component."
+Right_hand,OY,RingDistal_M13,matrix,m,number,314,"RingDistal pose matrix M13, row-major. World translation component."
+Right_hand,OZ,RingDistal_M20,matrix,dimensionless,number,315,"RingDistal pose matrix M20, row-major. Rotation component."
+Right_hand,PA,RingDistal_M21,matrix,dimensionless,number,316,"RingDistal pose matrix M21, row-major. Rotation component."
+Right_hand,PB,RingDistal_M22,matrix,dimensionless,number,317,"RingDistal pose matrix M22, row-major. Rotation component."
+Right_hand,PC,RingDistal_M23,matrix,m,number,318,"RingDistal pose matrix M23, row-major. World translation component."
+Right_hand,PD,RingDistal_M30,matrix,dimensionless,number,319,"RingDistal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,PE,RingDistal_M31,matrix,dimensionless,number,320,"RingDistal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,PF,RingDistal_M32,matrix,dimensionless,number,321,"RingDistal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,PG,RingDistal_M33,matrix,dimensionless,number,322,"RingDistal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,PH,RingDistal_x_m,position,m,number,310,RingDistal world x position; duplicates the same joint's M03 value.
+Right_hand,PI,RingDistal_y_m,position,m,number,314,RingDistal world y position; duplicates the same joint's M13 value.
+Right_hand,PJ,RingDistal_z_m,position,m,number,318,RingDistal world z position; duplicates the same joint's M23 value.
+Right_hand,PK,RingDistal_valid,quality,0 or 1,integer,438,Original RingDistal valid flag. A 1 does not certify physical accuracy.
+Right_hand,PL,RingDistal_tracked,quality,0 or 1,integer,464,Original RingDistal tracked flag. A 1 does not certify physical accuracy.
+Right_hand,PM,RingTip_M00,matrix,dimensionless,number,323,"RingTip pose matrix M00, row-major. Rotation component."
+Right_hand,PN,RingTip_M01,matrix,dimensionless,number,324,"RingTip pose matrix M01, row-major. Rotation component."
+Right_hand,PO,RingTip_M02,matrix,dimensionless,number,325,"RingTip pose matrix M02, row-major. Rotation component."
+Right_hand,PP,RingTip_M03,matrix,m,number,326,"RingTip pose matrix M03, row-major. World translation component."
+Right_hand,PQ,RingTip_M10,matrix,dimensionless,number,327,"RingTip pose matrix M10, row-major. Rotation component."
+Right_hand,PR,RingTip_M11,matrix,dimensionless,number,328,"RingTip pose matrix M11, row-major. Rotation component."
+Right_hand,PS,RingTip_M12,matrix,dimensionless,number,329,"RingTip pose matrix M12, row-major. Rotation component."
+Right_hand,PT,RingTip_M13,matrix,m,number,330,"RingTip pose matrix M13, row-major. World translation component."
+Right_hand,PU,RingTip_M20,matrix,dimensionless,number,331,"RingTip pose matrix M20, row-major. Rotation component."
+Right_hand,PV,RingTip_M21,matrix,dimensionless,number,332,"RingTip pose matrix M21, row-major. Rotation component."
+Right_hand,PW,RingTip_M22,matrix,dimensionless,number,333,"RingTip pose matrix M22, row-major. Rotation component."
+Right_hand,PX,RingTip_M23,matrix,m,number,334,"RingTip pose matrix M23, row-major. World translation component."
+Right_hand,PY,RingTip_M30,matrix,dimensionless,number,335,"RingTip pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,PZ,RingTip_M31,matrix,dimensionless,number,336,"RingTip pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,QA,RingTip_M32,matrix,dimensionless,number,337,"RingTip pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,QB,RingTip_M33,matrix,dimensionless,number,338,"RingTip pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,QC,RingTip_x_m,position,m,number,326,RingTip world x position; duplicates the same joint's M03 value.
+Right_hand,QD,RingTip_y_m,position,m,number,330,RingTip world y position; duplicates the same joint's M13 value.
+Right_hand,QE,RingTip_z_m,position,m,number,334,RingTip world z position; duplicates the same joint's M23 value.
+Right_hand,QF,RingTip_valid,quality,0 or 1,integer,439,Original RingTip valid flag. A 1 does not certify physical accuracy.
+Right_hand,QG,RingTip_tracked,quality,0 or 1,integer,465,Original RingTip tracked flag. A 1 does not certify physical accuracy.
+Right_hand,QH,PinkyMetacarpal_M00,matrix,dimensionless,number,339,"PinkyMetacarpal pose matrix M00, row-major. Rotation component."
+Right_hand,QI,PinkyMetacarpal_M01,matrix,dimensionless,number,340,"PinkyMetacarpal pose matrix M01, row-major. Rotation component."
+Right_hand,QJ,PinkyMetacarpal_M02,matrix,dimensionless,number,341,"PinkyMetacarpal pose matrix M02, row-major. Rotation component."
+Right_hand,QK,PinkyMetacarpal_M03,matrix,m,number,342,"PinkyMetacarpal pose matrix M03, row-major. World translation component."
+Right_hand,QL,PinkyMetacarpal_M10,matrix,dimensionless,number,343,"PinkyMetacarpal pose matrix M10, row-major. Rotation component."
+Right_hand,QM,PinkyMetacarpal_M11,matrix,dimensionless,number,344,"PinkyMetacarpal pose matrix M11, row-major. Rotation component."
+Right_hand,QN,PinkyMetacarpal_M12,matrix,dimensionless,number,345,"PinkyMetacarpal pose matrix M12, row-major. Rotation component."
+Right_hand,QO,PinkyMetacarpal_M13,matrix,m,number,346,"PinkyMetacarpal pose matrix M13, row-major. World translation component."
+Right_hand,QP,PinkyMetacarpal_M20,matrix,dimensionless,number,347,"PinkyMetacarpal pose matrix M20, row-major. Rotation component."
+Right_hand,QQ,PinkyMetacarpal_M21,matrix,dimensionless,number,348,"PinkyMetacarpal pose matrix M21, row-major. Rotation component."
+Right_hand,QR,PinkyMetacarpal_M22,matrix,dimensionless,number,349,"PinkyMetacarpal pose matrix M22, row-major. Rotation component."
+Right_hand,QS,PinkyMetacarpal_M23,matrix,m,number,350,"PinkyMetacarpal pose matrix M23, row-major. World translation component."
+Right_hand,QT,PinkyMetacarpal_M30,matrix,dimensionless,number,351,"PinkyMetacarpal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,QU,PinkyMetacarpal_M31,matrix,dimensionless,number,352,"PinkyMetacarpal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,QV,PinkyMetacarpal_M32,matrix,dimensionless,number,353,"PinkyMetacarpal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,QW,PinkyMetacarpal_M33,matrix,dimensionless,number,354,"PinkyMetacarpal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,QX,PinkyMetacarpal_x_m,position,m,number,342,PinkyMetacarpal world x position; duplicates the same joint's M03 value.
+Right_hand,QY,PinkyMetacarpal_y_m,position,m,number,346,PinkyMetacarpal world y position; duplicates the same joint's M13 value.
+Right_hand,QZ,PinkyMetacarpal_z_m,position,m,number,350,PinkyMetacarpal world z position; duplicates the same joint's M23 value.
+Right_hand,RA,PinkyMetacarpal_valid,quality,0 or 1,integer,440,Original PinkyMetacarpal valid flag. A 1 does not certify physical accuracy.
+Right_hand,RB,PinkyMetacarpal_tracked,quality,0 or 1,integer,466,Original PinkyMetacarpal tracked flag. A 1 does not certify physical accuracy.
+Right_hand,RC,PinkyProximal_M00,matrix,dimensionless,number,355,"PinkyProximal pose matrix M00, row-major. Rotation component."
+Right_hand,RD,PinkyProximal_M01,matrix,dimensionless,number,356,"PinkyProximal pose matrix M01, row-major. Rotation component."
+Right_hand,RE,PinkyProximal_M02,matrix,dimensionless,number,357,"PinkyProximal pose matrix M02, row-major. Rotation component."
+Right_hand,RF,PinkyProximal_M03,matrix,m,number,358,"PinkyProximal pose matrix M03, row-major. World translation component."
+Right_hand,RG,PinkyProximal_M10,matrix,dimensionless,number,359,"PinkyProximal pose matrix M10, row-major. Rotation component."
+Right_hand,RH,PinkyProximal_M11,matrix,dimensionless,number,360,"PinkyProximal pose matrix M11, row-major. Rotation component."
+Right_hand,RI,PinkyProximal_M12,matrix,dimensionless,number,361,"PinkyProximal pose matrix M12, row-major. Rotation component."
+Right_hand,RJ,PinkyProximal_M13,matrix,m,number,362,"PinkyProximal pose matrix M13, row-major. World translation component."
+Right_hand,RK,PinkyProximal_M20,matrix,dimensionless,number,363,"PinkyProximal pose matrix M20, row-major. Rotation component."
+Right_hand,RL,PinkyProximal_M21,matrix,dimensionless,number,364,"PinkyProximal pose matrix M21, row-major. Rotation component."
+Right_hand,RM,PinkyProximal_M22,matrix,dimensionless,number,365,"PinkyProximal pose matrix M22, row-major. Rotation component."
+Right_hand,RN,PinkyProximal_M23,matrix,m,number,366,"PinkyProximal pose matrix M23, row-major. World translation component."
+Right_hand,RO,PinkyProximal_M30,matrix,dimensionless,number,367,"PinkyProximal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,RP,PinkyProximal_M31,matrix,dimensionless,number,368,"PinkyProximal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,RQ,PinkyProximal_M32,matrix,dimensionless,number,369,"PinkyProximal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,RR,PinkyProximal_M33,matrix,dimensionless,number,370,"PinkyProximal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,RS,PinkyProximal_x_m,position,m,number,358,PinkyProximal world x position; duplicates the same joint's M03 value.
+Right_hand,RT,PinkyProximal_y_m,position,m,number,362,PinkyProximal world y position; duplicates the same joint's M13 value.
+Right_hand,RU,PinkyProximal_z_m,position,m,number,366,PinkyProximal world z position; duplicates the same joint's M23 value.
+Right_hand,RV,PinkyProximal_valid,quality,0 or 1,integer,441,Original PinkyProximal valid flag. A 1 does not certify physical accuracy.
+Right_hand,RW,PinkyProximal_tracked,quality,0 or 1,integer,467,Original PinkyProximal tracked flag. A 1 does not certify physical accuracy.
+Right_hand,RX,PinkyIntermediate_M00,matrix,dimensionless,number,371,"PinkyIntermediate pose matrix M00, row-major. Rotation component."
+Right_hand,RY,PinkyIntermediate_M01,matrix,dimensionless,number,372,"PinkyIntermediate pose matrix M01, row-major. Rotation component."
+Right_hand,RZ,PinkyIntermediate_M02,matrix,dimensionless,number,373,"PinkyIntermediate pose matrix M02, row-major. Rotation component."
+Right_hand,SA,PinkyIntermediate_M03,matrix,m,number,374,"PinkyIntermediate pose matrix M03, row-major. World translation component."
+Right_hand,SB,PinkyIntermediate_M10,matrix,dimensionless,number,375,"PinkyIntermediate pose matrix M10, row-major. Rotation component."
+Right_hand,SC,PinkyIntermediate_M11,matrix,dimensionless,number,376,"PinkyIntermediate pose matrix M11, row-major. Rotation component."
+Right_hand,SD,PinkyIntermediate_M12,matrix,dimensionless,number,377,"PinkyIntermediate pose matrix M12, row-major. Rotation component."
+Right_hand,SE,PinkyIntermediate_M13,matrix,m,number,378,"PinkyIntermediate pose matrix M13, row-major. World translation component."
+Right_hand,SF,PinkyIntermediate_M20,matrix,dimensionless,number,379,"PinkyIntermediate pose matrix M20, row-major. Rotation component."
+Right_hand,SG,PinkyIntermediate_M21,matrix,dimensionless,number,380,"PinkyIntermediate pose matrix M21, row-major. Rotation component."
+Right_hand,SH,PinkyIntermediate_M22,matrix,dimensionless,number,381,"PinkyIntermediate pose matrix M22, row-major. Rotation component."
+Right_hand,SI,PinkyIntermediate_M23,matrix,m,number,382,"PinkyIntermediate pose matrix M23, row-major. World translation component."
+Right_hand,SJ,PinkyIntermediate_M30,matrix,dimensionless,number,383,"PinkyIntermediate pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,SK,PinkyIntermediate_M31,matrix,dimensionless,number,384,"PinkyIntermediate pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,SL,PinkyIntermediate_M32,matrix,dimensionless,number,385,"PinkyIntermediate pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,SM,PinkyIntermediate_M33,matrix,dimensionless,number,386,"PinkyIntermediate pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,SN,PinkyIntermediate_x_m,position,m,number,374,PinkyIntermediate world x position; duplicates the same joint's M03 value.
+Right_hand,SO,PinkyIntermediate_y_m,position,m,number,378,PinkyIntermediate world y position; duplicates the same joint's M13 value.
+Right_hand,SP,PinkyIntermediate_z_m,position,m,number,382,PinkyIntermediate world z position; duplicates the same joint's M23 value.
+Right_hand,SQ,PinkyIntermediate_valid,quality,0 or 1,integer,442,Original PinkyIntermediate valid flag. A 1 does not certify physical accuracy.
+Right_hand,SR,PinkyIntermediate_tracked,quality,0 or 1,integer,468,Original PinkyIntermediate tracked flag. A 1 does not certify physical accuracy.
+Right_hand,SS,PinkyDistal_M00,matrix,dimensionless,number,387,"PinkyDistal pose matrix M00, row-major. Rotation component."
+Right_hand,ST,PinkyDistal_M01,matrix,dimensionless,number,388,"PinkyDistal pose matrix M01, row-major. Rotation component."
+Right_hand,SU,PinkyDistal_M02,matrix,dimensionless,number,389,"PinkyDistal pose matrix M02, row-major. Rotation component."
+Right_hand,SV,PinkyDistal_M03,matrix,m,number,390,"PinkyDistal pose matrix M03, row-major. World translation component."
+Right_hand,SW,PinkyDistal_M10,matrix,dimensionless,number,391,"PinkyDistal pose matrix M10, row-major. Rotation component."
+Right_hand,SX,PinkyDistal_M11,matrix,dimensionless,number,392,"PinkyDistal pose matrix M11, row-major. Rotation component."
+Right_hand,SY,PinkyDistal_M12,matrix,dimensionless,number,393,"PinkyDistal pose matrix M12, row-major. Rotation component."
+Right_hand,SZ,PinkyDistal_M13,matrix,m,number,394,"PinkyDistal pose matrix M13, row-major. World translation component."
+Right_hand,TA,PinkyDistal_M20,matrix,dimensionless,number,395,"PinkyDistal pose matrix M20, row-major. Rotation component."
+Right_hand,TB,PinkyDistal_M21,matrix,dimensionless,number,396,"PinkyDistal pose matrix M21, row-major. Rotation component."
+Right_hand,TC,PinkyDistal_M22,matrix,dimensionless,number,397,"PinkyDistal pose matrix M22, row-major. Rotation component."
+Right_hand,TD,PinkyDistal_M23,matrix,m,number,398,"PinkyDistal pose matrix M23, row-major. World translation component."
+Right_hand,TE,PinkyDistal_M30,matrix,dimensionless,number,399,"PinkyDistal pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,TF,PinkyDistal_M31,matrix,dimensionless,number,400,"PinkyDistal pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,TG,PinkyDistal_M32,matrix,dimensionless,number,401,"PinkyDistal pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,TH,PinkyDistal_M33,matrix,dimensionless,number,402,"PinkyDistal pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,TI,PinkyDistal_x_m,position,m,number,390,PinkyDistal world x position; duplicates the same joint's M03 value.
+Right_hand,TJ,PinkyDistal_y_m,position,m,number,394,PinkyDistal world y position; duplicates the same joint's M13 value.
+Right_hand,TK,PinkyDistal_z_m,position,m,number,398,PinkyDistal world z position; duplicates the same joint's M23 value.
+Right_hand,TL,PinkyDistal_valid,quality,0 or 1,integer,443,Original PinkyDistal valid flag. A 1 does not certify physical accuracy.
+Right_hand,TM,PinkyDistal_tracked,quality,0 or 1,integer,469,Original PinkyDistal tracked flag. A 1 does not certify physical accuracy.
+Right_hand,TN,PinkyTip_M00,matrix,dimensionless,number,403,"PinkyTip pose matrix M00, row-major. Rotation component."
+Right_hand,TO,PinkyTip_M01,matrix,dimensionless,number,404,"PinkyTip pose matrix M01, row-major. Rotation component."
+Right_hand,TP,PinkyTip_M02,matrix,dimensionless,number,405,"PinkyTip pose matrix M02, row-major. Rotation component."
+Right_hand,TQ,PinkyTip_M03,matrix,m,number,406,"PinkyTip pose matrix M03, row-major. World translation component."
+Right_hand,TR,PinkyTip_M10,matrix,dimensionless,number,407,"PinkyTip pose matrix M10, row-major. Rotation component."
+Right_hand,TS,PinkyTip_M11,matrix,dimensionless,number,408,"PinkyTip pose matrix M11, row-major. Rotation component."
+Right_hand,TT,PinkyTip_M12,matrix,dimensionless,number,409,"PinkyTip pose matrix M12, row-major. Rotation component."
+Right_hand,TU,PinkyTip_M13,matrix,m,number,410,"PinkyTip pose matrix M13, row-major. World translation component."
+Right_hand,TV,PinkyTip_M20,matrix,dimensionless,number,411,"PinkyTip pose matrix M20, row-major. Rotation component."
+Right_hand,TW,PinkyTip_M21,matrix,dimensionless,number,412,"PinkyTip pose matrix M21, row-major. Rotation component."
+Right_hand,TX,PinkyTip_M22,matrix,dimensionless,number,413,"PinkyTip pose matrix M22, row-major. Rotation component."
+Right_hand,TY,PinkyTip_M23,matrix,m,number,414,"PinkyTip pose matrix M23, row-major. World translation component."
+Right_hand,TZ,PinkyTip_M30,matrix,dimensionless,number,415,"PinkyTip pose matrix M30, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,UA,PinkyTip_M31,matrix,dimensionless,number,416,"PinkyTip pose matrix M31, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,UB,PinkyTip_M32,matrix,dimensionless,number,417,"PinkyTip pose matrix M32, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,UC,PinkyTip_M33,matrix,dimensionless,number,418,"PinkyTip pose matrix M33, row-major. Homogeneous matrix bottom row; normally 0,0,0,1."
+Right_hand,UD,PinkyTip_x_m,position,m,number,406,PinkyTip world x position; duplicates the same joint's M03 value.
+Right_hand,UE,PinkyTip_y_m,position,m,number,410,PinkyTip world y position; duplicates the same joint's M13 value.
+Right_hand,UF,PinkyTip_z_m,position,m,number,414,PinkyTip world z position; duplicates the same joint's M23 value.
+Right_hand,UG,PinkyTip_valid,quality,0 or 1,integer,444,Original PinkyTip valid flag. A 1 does not certify physical accuracy.
+Right_hand,UH,PinkyTip_tracked,quality,0 or 1,integer,470,Original PinkyTip tracked flag. A 1 does not certify physical accuracy.
